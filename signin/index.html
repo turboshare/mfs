@@ -4,34 +4,34 @@
     <title>Matic Force Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon href="https://mfs.maticforce.space/Matic-Force-Logo.png">
+    <link rel="shortcut icon" type="image/x-icon href="https://maticforce.space/Matic-Force-Logo.png">
 
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700" rel="stylesheet">
     <!--Font icons-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="https://mfs.maticforce.space/signin/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://mfs.maticforce.space/signin/style.min.css">
-    <link rel="stylesheet" type="text/css" href="https://mfs.maticforce.space/signin/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://mfs.maticforce.space/signin/flipclock.css">
-    <link rel="stylesheet" type="text/css" href="https://mfs.maticforce.space/signin/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maticforce.space/signin/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maticforce.space/signin/style.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maticforce.space/signin/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maticforce.space/signin/flipclock.css">
+    <link rel="stylesheet" type="text/css" href="https://maticforce.space/signin/swiper.min.css">
     <!-- END VENDOR CSS-->
     <!-- END CRYPTO CSS-->
     <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="https://mfs.maticforce.space/signin/template-counter.css">
+    <link rel="stylesheet" type="text/css" href="https://maticforce.space/signin/template-counter.css">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="https://mfs.maticforce.space/signin/style.css">
+    <link rel="stylesheet" type="text/css" href="https://maticforce.space/signin/style.css">
     <!-- END Custom CSS-->
 
 
-    <link rel="stylesheet" type="text/css" href="https://mfs.maticforce.space/signin/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maticforce.space/signin/font-awesome.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="https://mfs.maticforce.space/signin/icon.font.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maticforce.space/signin/icon.font.min.css">
 
-    <link rel="stylesheet" type="text/css" href="https://mfs.maticforce.space/signin/util.css">
-    <link rel="stylesheet" type="text/css" href="https://mfs.maticforce.space/signin/main.css">
+    <link rel="stylesheet" type="text/css" href="https://maticforce.space/signin/util.css">
+    <link rel="stylesheet" type="text/css" href="https://maticforce.space/signin/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <!--===============================================================================================-->
@@ -231,7 +231,7 @@ $(document).ready(function () {
             myContractInstance.methods.users(account).call().then(function (result) {
                 if (result[0]) {
                     localStorage.setItem("address", account);
-                    location.href = "https://mfs.maticforce.space/Home-Dashboard";
+                    location.href = "https://maticforce.github.io/mfs/Home-Dashboard";
                 }
                 else {
                     $('.error').html('You need to register first');
@@ -260,7 +260,7 @@ $(document).ready(function () {
                 if (result1.status == "0x1") {
                     alert("success")
                     localStorage.setItem("address", account);
-                    location.href = "https://mfs.maticforce.space/Home-Dashboard";
+                    location.href = "https://maticforce.github.io/mfs/Home-Dashboard";
                 }
                 else {
                     $('.error').html('Transaction Failed');
@@ -330,7 +330,7 @@ $(document).ready(function () {
                     if (receipt.status) {
                         alert("success")
                         localStorage.setItem("address", account);
-                        location.href = "https://mfs.maticforce.space/Home-Dashboard";
+                        location.href = "https://maticforce.github.io/mfs/Home-Dashboard";
                     }
                     else {
                         $('.error').html('Transaction Failed');
@@ -355,7 +355,7 @@ $(document).ready(function () {
                        
 
                             localStorage.setItem("address", add);
-                            location.href = "https://mfs.maticforce.space/Home-Dashboard";
+                            location.href = "https://maticforce.github.io/mfs/Home-Dashboard";
                         }
                         else {
                             $('.error').html('You need to register first');
@@ -388,7 +388,7 @@ $(document).ready(function () {
 
     </script>
     <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-    <script src="https://mfs.maticforce.space/signin/socialjs.js"></script>
+    <script src="https://maticforce.space/signin/socialjs.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function (event) {
             socialjs.init({
@@ -423,7 +423,7 @@ $(document).ready(function () {
                         <p class="error m-b-10 alert alert-danger" style="display:none">
 
                         </p>
-                        <p class="m-b-15 text-right text-white">Don't have account ? <a href="https://mfs.maticforce.space/signup" class="text-white"> Sign up</a></p>
+                        <p class="m-b-15 text-right text-white">Don't have account ? <a href="https://maticforce.github.io/mfs/signup" class="text-white"> Sign up</a></p>
 
                         <div class="container-login100-form-btn">
                             <button class="btn-success login100-form-btn" id="lgmbtn">
@@ -459,7 +459,7 @@ $(document).ready(function () {
                 </div> 
                 <div class="login100-more ">
                     <div class="col-lg-12 m-t-30">
-                        <a href="https://mfs.maticforce.space"> <img src="https://mfs.maticforce.space/Matic-Force-Logo.png" style="" class="w-100" /></a>
+                        <a href="https://maticforce.space"> <img src="https://maticforce.space/Matic-Force-Logo.png" style="" class="w-100" /></a>
                     </div>
                                                                                                                                                    
                                                                                                                                                    
@@ -468,7 +468,7 @@ $(document).ready(function () {
                                                                                                                                                  
                     <div class="w-100 m-t-100 m-l-auto m-r-auto text-center download-buttons">
                         <a href="https://metamask.io/" target="_blank" class="m-b-5 btn btn-success" style="background-color:#062d54;border-color:#062d54">Download Metamask</a>
-                        <a href="https://trustwallet.com/" target="_blank" class="m-b-5 btn btn-info">Download TrustWallet</a>
+                        <a href="https://tokenpocket.pro" target="_blank" class="m-b-5 btn btn-info">Download TokenPocket</a>
                     </div>
                 </div>
             </div>
