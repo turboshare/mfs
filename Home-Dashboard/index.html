@@ -10,7 +10,7 @@
 
         if (account == null) {
             alert("You are not Logged In. Please Login first..!!");
-           location.href = "https://maticforce.github.io/mfs/signin";
+           location.href = "https://mfs.maticforce.space/signin";
         }
     </script>
 
@@ -92,7 +92,7 @@
                 <div class="app-header header top-header navbar-collapse ">
                     <div class="container-fluid">
                         <div class="d-flex">
-                            <a class="header-brand" href="https://maticforce.github.io/mfs/Home-Dashboard">
+                            <a class="header-brand" href="https://mfs.maticforce.space/Home-Dashboard">
                                 <h3 style="margin-top: 16px;color: #141670;">MATIC FORCE</h3>
                                 
                                
@@ -111,11 +111,11 @@
                         <div class="line-animations">
                             <ul class="resp-tabs-list hor_1">
                                 
-                                 <li class="resp-tab-active active"><a href="https://maticforce.github.io/mfs/Home-Dashboard"><span class="side-menu__icon"></span><img src="https://mfs.maticforce.space/Home-Dashboard/Content/assets/img/homepage.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Home"></a></li>
-                                <li class="autopool"><a href="https://maticforce.github.io/mfs/SmartMatrix"><span class="side-menu__icon"></span><img src="https://mfs.maticforce.space/Home-Dashboard/Content/assets/img/m2.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="SmartMatrix"></a></li>
-                                <li class="trans"><a href="https://maticforce.github.io/mfs/Transaction"><span class="side-menu__icon"></span><img src="https://mfs.maticforce.space/Home-Dashboard/Content/assets/img/m3.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Transations"></a></li>
-                                <li class="team2"><a href="https://maticforce.github.io/mfs/Team"><span class="side-menu__icon"></span><img src="https://mfs.maticforce.space/Home-Dashboard/Content/assets/img/m4.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Team"></a></li>
-                                <li class="media2"><a href="https://maticforce.github.io/mfs/Media"><span class="side-menu__icon"></span><img src="https://mfs.maticforce.space/Home-Dashboard/Content/assets/img/m5.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Media"></a></li>
+                                 <li class="resp-tab-active active"><a href="/Home-Dashboard"><span class="side-menu__icon"></span><img src="https://mfs.maticforce.space/Home-Dashboard/Content/assets/img/homepage.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Home"></a></li>
+                                <li class="autopool"><a href="https://mfs.maticforce.space/Autopool"><span class="side-menu__icon"></span><img src="https://mfs.maticforce.space/Home-Dashboard/Content/assets/img/m2.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Autopool"></a></li>
+                                <li class="trans"><a href="https://mfs.maticforce.space/Transaction"><span class="side-menu__icon"></span><img src="https://mfs.maticforce.space/Home-Dashboard/Content/assets/img/m3.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Transations"></a></li>
+                                <li class="team2"><a href="https://mfs.maticforce.space/Team"><span class="side-menu__icon"></span><img src="https://mfs.maticforce.space/Home-Dashboard/Content/assets/img/m4.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Team"></a></li>
+                                <li class="media2"><a href="https://mfs.maticforce.space/Media"><span class="side-menu__icon"></span><img src="https://mfs.maticforce.space/Home-Dashboard/Content/assets/img/m5.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Media"></a></li>
                              
                                 <li class="logoutuser"><span class="side-menu__icon"></span><img src="https://mfs.maticforce.space/Home-Dashboard/Content/assets/img/m6.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Log out"></li>
                           
@@ -206,17 +206,17 @@ function getVariableData() {
 
     myContractInstance.methods.users(account).call().then(function (result1) {
         
-            $('.currentuseridlink').html("https://maticforce.github.io/mfs/signup/?referralid=" + result1.id);
+            $('.currentuseridlink').html("https://mfs.maticforce.space/signup/?referralid=" + result1.id);
 
 
 
 
-            $('.currentuseridlink').val("https://maticforce.github.io/mfs/signup/?referralid=" + result1.id);
+            $('.currentuseridlink').val("https://mfs.maticforce.space/signup/?referralid=" + result1.id);
 
 
 
 
-            $('.sharebutton').attr('data-url', "https://maticforce.github.io/mfs/signup/?referralid=" + result1.id);
+            $('.sharebutton').attr('data-url', "https://mfs.maticforce.space/signup/?referralid=" + result1.id);
             $('.currentuserid').html(result1.id);
             $('.currentaddress').html(account);
             $('.ethaddress').attr('href', 'https://polygonscan.com/address/' + account);
@@ -286,15 +286,16 @@ function getReferralCommission() {
 
 
 function getPoolPaymentReceived() {
-    var pool1_price = 10;
-    var pool2_price = 50;
-    var pool3_price = 100;
-    var pool4_price = 500;
-    var pool5_price = 1000;
-    var pool6_price = 5000;
-    var pool7_price = 10000;
-    var pool8_price = 50000;
-    
+    var pool1_price = 0.1;
+    var pool2_price = 0.2;
+    var pool3_price = 0.5;
+    var pool4_price = 1;
+    var pool5_price = 2;
+    var pool6_price = 5;
+    var pool7_price = 10;
+    var pool8_price = 20;
+    var pool9_price = 50;
+    var pool10_price = 100;
 
     var referraltotal = parseFloat(0);
 
@@ -483,15 +484,17 @@ function Transaction_Register() {
 
 function Transaction_Pool() {
     var events = myContractInstance.getPastEvents('getPoolPayment', {filter:{ _receiver: account },  'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
-        var pool1_price = 10;
-        var pool2_price = 50;
-        var pool3_price = 100;
-        var pool4_price = 500;
-        var pool5_price = 1000;
-        var pool6_price = 5000;
-        var pool7_price = 10000;
-        var pool8_price = 50000;
-       
+        var pool1_price = 0.1;
+        var pool2_price = 0.2;
+        var pool3_price = 0.5;
+        var pool4_price = 1;
+        var pool5_price = 2;
+        var pool6_price = 5;
+        var pool7_price = 10;
+        var pool8_price = 20;
+        var pool9_price = 50;
+        var pool10_price = 100;
+
         if (!error) {
             $.each(log, function (key, value) {
                 $('.transaction_autopool').append('<tr><td><a href="https://polygonscan.com/tx/' + value.transactionHash + '" target="_blank">' + value.transactionHash + '</a></td><td style=color:green>' + value.returnValues._user + '</td><td>' + value.returnValues._level + '</td><td>' + (value.returnValues._level == 1 ? pool1_price : value.returnValues._level == 2 ? pool2_price : value.returnValues._level == 3 ? pool3_price : value.returnValues._level == 4 ? pool4_price : value.returnValues._level == 5 ? pool5_price : value.returnValues._level == 6 ? pool6_price : value.returnValues._level == 7 ? pool7_price : value.returnValues._level == 8 ? pool8_price : value.returnValues._level == 9 ? pool9_price : pool10_price) + ' ETH</td></tr>');
@@ -855,13 +858,77 @@ function checkPool8() {
 
 }
 
+function checkPool9() {
+    myContractInstance.methods.pool9users(account).call().then(function ( result) {
+        if(result[1] > 0){
+        $('#pool9sequencue').text(result[1])
+        $('#pool9sequencue').show();
+        $('.pool9sequencue').show();}
+       
+            if (!result[0]) {
+                $('.pool9pay').show();
+                $('.pool9transaction').hide();
+            }
+            else if (result[2] == 3) {
+                $('.pool9status').show();
+                $('.pool9status .card-status').addClass('bg-success');
+                $('.pool9status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
+                $('.pool9transaction').html('Received No. of Payments ' + result[2]);
+
+
+            }
+            else if (result[2] < 3) {
+                $('.pool9status').show();
+                $('.pool9status .card-status').addClass('bg-warning');
+                $('.pool9status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool9transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(9);
+            }
+
+
+        
+
+    });
+
+}
+
+function checkPool10() {
+    myContractInstance.methods.pool10users(account).call().then(function (result) {
+        if(result[1] > 0){
+        $('#pool10sequencue').text(result[1])
+        $('#pool10sequencue').show();
+        $('.pool10sequencue').show();}
+       
+            if (!result[0]) {
+                $('.pool10pay').show();
+                $('.pool10transaction').hide();
+            }
+            else if (result[2] == 3) {
+                $('.pool10status').show();
+                $('.pool10status .card-status').addClass('bg-success');
+                $('.pool10status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
+                $('.pool10transaction').html('Received No. of Payments ' + result[2]);
+                $('.currentautopoolno').html(10);
+            }
+            else if (result[2] < 3) {
+                $('.pool10status').show();
+                $('.pool10status .card-status').addClass('bg-warning');
+                $('.pool10status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool10transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(10);
+            }
+
+
+       
+
+    });
+
+}
 $(document).ready(function () {
     $('.pool1pay').click(function (demo) {
        
         try {
 
             ethereum.enable();
-            myContractInstance1.methods.buyPool1().send({ from: account, value: 10000000000000000000, gas: 500000 })
+            myContractInstance1.methods.buyPool1().send({ from: account, value: 100000000000000000, gas: 500000 })
                 .on('transactionHash', function (hash) {
                     console.log('------->',hash)
                     $('.pool1pay').hide();
@@ -881,7 +948,7 @@ $(document).ready(function () {
             ethereum.enable();
           
 
-            myContractInstance1.methods.buyPool2().send({ from: account, value: 50000000000000000000, gas: 500000 })
+            myContractInstance1.methods.buyPool2().send({ from: account, value: 200000000000000000, gas: 500000 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool2pay').hide();
@@ -899,7 +966,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool3().send({ from: account, value: 100000000000000000000, gas: 500000 })
+            myContractInstance1.methods.buyPool3().send({ from: account, value: 500000000000000000, gas: 500000 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool3pay').hide();
@@ -917,7 +984,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
             
-            myContractInstance1.methods.buyPool4().send({ from: account, value: 500000000000000000000, gas: 500000 })
+            myContractInstance1.methods.buyPool4().send({ from: account, value: 1000000000000000000, gas: 500000 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool4pay').hide();
@@ -935,7 +1002,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();           
 
-            myContractInstance1.methods.buyPool5().send({ from: account, value: 1000000000000000000000, gas: 500000 })
+            myContractInstance1.methods.buyPool5().send({ from: account, value: 2000000000000000000, gas: 500000 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool5pay').hide();
@@ -954,7 +1021,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool6().send({ from: account, value: 5000000000000000000000, gas: 500000 })
+            myContractInstance1.methods.buyPool6().send({ from: account, value: 5000000000000000000, gas: 500000 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool6pay').hide();
@@ -973,7 +1040,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool7().send({ from: account, value: 10000000000000000000000, gas: 500000 })
+            myContractInstance1.methods.buyPool7().send({ from: account, value: 10000000000000000000, gas: 500000 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool7pay').hide();
@@ -994,7 +1061,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool8().send({ from: account, value: 50000000000000000000000, gas: 500000 })
+            myContractInstance1.methods.buyPool8().send({ from: account, value: 20000000000000000000, gas: 500000 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool8pay').hide();
@@ -1338,7 +1405,7 @@ $(document).ready(function () {
                         <div class="ribbon ribbon-top-left"></div>
                     </div>
                     <div class="card-header text-center mx-auto">
-                        <h2 class="card-title font-weight-bold">Smart Matrix - 1</h2>
+                        <h2 class="card-title font-weight-bold">Smart Matrix</h2>
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5">10 MATIC</h1>
@@ -1356,7 +1423,7 @@ $(document).ready(function () {
                         <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
                     </div>
                     <div class="card-header text-center mx-auto">
-                        <h3 class="card-title font-weight-bold">Smart Matrix - 2</h3>
+                        <h3 class="card-title font-weight-bold">Silver Matrix</h3>
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5">50 MATIC</h1>
@@ -1374,7 +1441,7 @@ $(document).ready(function () {
                         <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
                     </div>
                     <div class="card-header text-center mx-auto">
-                        <h3 class="card-title font-weight-bold">Smart Matrix - 3</h3>
+                        <h3 class="card-title font-weight-bold">Gold Matrix</h3>
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5">100 MATIC</h1>
@@ -1393,7 +1460,7 @@ $(document).ready(function () {
                         <div class="ribbon ribbon-top-left "><span class="bg-danger">New</span></div>
                     </div>
                     <div class="card-header text-center mx-auto">
-                        <h3 class="card-title font-weight-bold">Smart Matrix - 4</h3>
+                        <h3 class="card-title font-weight-bold">Royal Matrix</h3>
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5">500 MATIC</h1>
@@ -1412,7 +1479,7 @@ $(document).ready(function () {
                         <div class="ribbon ribbon-top-left "><span class="bg-danger">New</span></div>
                     </div>
                     <div class="card-header text-center mx-auto">
-                        <h3 class="card-title font-weight-bold">Smart Matrix - 5</h3>
+                        <h3 class="card-title font-weight-bold">Crown Matrix</h3>
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5">1000 MATIC</h1>
@@ -1431,7 +1498,7 @@ $(document).ready(function () {
                         <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
                     </div>
                     <div class="card-header text-center mx-auto">
-                        <h3 class="card-title font-weight-bold">Smart Matrix - 6</h3>
+                        <h3 class="card-title font-weight-bold">Double Crown Matrix</h3>
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5">5000 MATIC</h1>
@@ -1450,7 +1517,7 @@ $(document).ready(function () {
                         <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
                     </div>
                     <div class="card-header text-center mx-auto">
-                        <h3 class="card-title font-weight-bold">Smart Matrix - 7</h3>
+                        <h3 class="card-title font-weight-bold">Emerald Matrix</h3>
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5">10000 MATIC</h1>
@@ -1469,7 +1536,7 @@ $(document).ready(function () {
                         <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
                     </div>
                     <div class="card-header text-center mx-auto">
-                        <h3 class="card-title font-weight-bold">Smart Matrix - 8</h3>
+                        <h3 class="card-title font-weight-bold">Double Emerald Matrix</h3>
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5">50000 MATIC</h1>
@@ -1511,7 +1578,7 @@ $(document).ready(function () {
                         </a>
                     </div>
                     <div class="col-md-6  mt-2 mb-2 text-center">
-                        Copyright © 2023 <a href="https://maticforce.space" class="fs-14 text-primary">https://maticforce.space</a>
+                        Copyright © 2023 <a href="#" class="fs-14 text-primary">https://mfs.maticforce.space</a>
                     </div>
                 </div>
             </div>
@@ -1592,7 +1659,7 @@ $(document).ready(function () {
         $('.logoutuser').click(function () {
         
             var account = localStorage.removeItem("address", null);
-            location.href = "https://maticforce.github.io/mfs/signin";
+            location.href = "https://mfs.maticforce.space/signin";
         });
     });
     </script>
