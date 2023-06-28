@@ -231,7 +231,7 @@ $(document).ready(function () {
             myContractInstance.methods.users(account).call().then(function (result) {
                 if (result[0]) {
                     localStorage.setItem("address", account);
-                    location.href = "https://maticforce.github.io/mfs/Home-Dashboard";
+                    location.href = "https://maticforce.space/Home-Dashboard";
                 }
                 else {
                     $('.error').html('You need to register first');
@@ -260,7 +260,7 @@ $(document).ready(function () {
                 if (result1.status == "0x1") {
                     alert("success")
                     localStorage.setItem("address", account);
-                    location.href = "https://maticforce.github.io/mfs/Home-Dashboard";
+                    location.href = "https://maticforce.space/Home-Dashboard";
                 }
                 else {
                     $('.error').html('Transaction Failed');
@@ -330,7 +330,7 @@ $(document).ready(function () {
                     if (receipt.status) {
                         alert("success")
                         localStorage.setItem("address", account);
-                        location.href = "https://maticforce.github.io/mfs/Home-Dashboard";
+                        location.href = "https://maticforce.space/Home-Dashboard";
                     }
                     else {
                         $('.error').html('Transaction Failed');
@@ -355,7 +355,7 @@ $(document).ready(function () {
                        
 
                             localStorage.setItem("address", add);
-                            location.href = "https://maticforce.github.io/mfs/Home-Dashboard";
+                            location.href = "https://maticforce.space/Home-Dashboard";
                         }
                         else {
                             $('.error').html('You need to register first');
@@ -423,7 +423,7 @@ $(document).ready(function () {
                         <p class="error m-b-10 alert alert-danger" style="display:none">
 
                         </p>
-                        <p class="m-b-15 text-right text-white">Don't have account ? <a href="https://maticforce.github.io/mfs/signup" class="text-white"> Sign up</a></p>
+                        <p class="m-b-15 text-right text-white">Don't have account ? <a href="maticforce.space/signup" class="text-white"> Sign up</a></p>
 
                         <div class="container-login100-form-btn">
                             <button class="btn-success login100-form-btn" id="lgmbtn">
