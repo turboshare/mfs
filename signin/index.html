@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Matic Force Login</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon href="https://maticforce.space/Matic-Force-Logo.png">
+<html>
 
-    <!--Google Fonts-->
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/favicon.png" type="">
+
+  <title> Matic Force </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+ <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700" rel="stylesheet">
     <!--Font icons-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -49,12 +74,12 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
-    background: -webkit-gradient(linear, left top, right top, from(#a34ffe), to(#5934FC));
-    background: -webkit-linear-gradient(left, #A34FFE, #5934FC);
-    background: -moz-linear-gradient(left, #A34FFE, #5934FC);
-    background: -o-linear-gradient(left, #A34FFE, #5934FC);
-    background-color: linear-gradient(to right, #A34FFE, #5934FC);
-    background: #a34ffe url(bg.png);
+    background: -webkit-gradient(linear, left top, right top, from(#5934FC), to(#5934FC));
+    background: -webkit-linear-gradient(left, #5934FC, #5934FC);
+    background: -moz-linear-gradient(left, #5934FC, #5934FC);
+    background: -o-linear-gradient(left, #5934FC, #5934FC);
+    background-color: linear-gradient(to right, #5934FC, #5934FC);
+    background: #5934FC url(hero-bg.png);
     background-size: cover;
 }
 .login100-form {
@@ -402,15 +427,73 @@ $(document).ready(function () {
     
     
 </head>
-<body>
 
+<body class="sub_page">
+
+  <div class="hero_area">
+
+    <div class="hero_bg_box">
+      <div class="bg_img_box">
+        <img src="images/hero-bg.png" alt="">
+      </div>
+    </div>
+
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="https://maticforce.space">
+                        <p><b><span style="color: white;">MATIC</span> <span style="color: #bf9000;">FORCE</span></b></p>
+
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item active">
+                <a class="nav-link" href="https://maticforce.space">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://maticforce.space/about"> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://maticforce.space/MaticForce.pdf">Business Plan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://maticforce.space/team">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://maticforce.space/signup"> <i class="fa fa-user" aria-hidden="true"></i> Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://maticforce.space/signin"> <i class="fa fa-user" aria-hidden="true"></i> Login</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- team section -->
+   <section class="team_section layout_padding">
+    <div class="container-fluid">
+      <div class="heading_container heading_center">
+                                <h2 style="text-align: left;"><b><span style="color: white;">MATIC</span> <span style="color: #bf9000;">FORCE </span><span style="color: #01ffff;">LOGIN</span></b></h2>
+
+      </div>
+<div class="center">
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="login100-form">
                     <form class="w-100 validate-form" onsubmit="return false" id="signinform">
                         <span class="login100-form-title p-b-10 text-white">
-                            Matic Force Login<br>
+                            Login Your Account<br>
                         </span>
                         <div class="wrap-input100 validate-input m-b-20" data-validate="Type user name">
                             <input id="first-name" class="input100" type="text" name="ethaddress" placeholder="Enter Matic address">
@@ -443,13 +526,113 @@ $(document).ready(function () {
                     <div class="col-lg-12 m-t-30">
                         <a href="https://maticforce.space"> <img src="https://maticforce.space/Matic-Force-Logo.png" style="" class="w-100" /></a>
                     </div>                                                                                                                              
-                    <div class="w-100 m-t-100 m-l-auto m-r-auto text-center download-buttons">
-                        <a href="https://maticforce.space/" target="_blank" class="m-b-5 btn btn-success" style="background-color:#062d54;border-color:#062d54">HOME</a>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="dropDownSelect1"></div>
 </body>
+</html>
+    </div>
+  </section>
+  <!-- end team section -->
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_contact">
+            <h4>
+              Address
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  help@maticforce.space
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="https://telegram.me/MaticForceSpace">
+              <i class="fa fa-telegram" aria-hidden="true">Telegram Group</i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_detail">
+            <h4>
+              Info
+            </h4>
+            <p>
+We work on bringing high traffic to your website or/and affiliate program,
+
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto info_col">
+          <div class="info_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="info_links">
+              <a class="active" href="https://maticforce.space">
+                Home
+              </a>
+              <a class="" href="https://maticforce.space/MaticForce.pdf">
+                Business Plan
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col ">
+          <h4>
+            Subscribe
+          </h4>
+          <form action="#">
+            <input type="text" placeholder="Enter email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <section class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://maticforce.space/">Matic Force</a>
+      </p>
+    </div>
+  </section>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
+</body>
+
 </html>
