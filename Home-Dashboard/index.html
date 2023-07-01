@@ -206,17 +206,17 @@ function getVariableData() {
 
     myContractInstance.methods.users(account).call().then(function (result1) {
         
-            $('.currentuseridlink').html("https://maticforce.space/register/?referralid=" + result1.id);
+            $('.currentuseridlink').html("https://maticforce.space/register?referralid=" + result1.id);
 
 
 
 
-            $('.currentuseridlink').val("https://maticforce.space/register/?referralid=" + result1.id);
+            $('.currentuseridlink').val("https://maticforce.space/register?referralid=" + result1.id);
 
 
 
 
-            $('.sharebutton').attr('data-url', "https://maticforce.space/mfs/register/?referralid=" + result1.id);
+            $('.sharebutton').attr('data-url', "https://maticforce.space/mfs/register?referralid=" + result1.id);
             $('.currentuserid').html(result1.id);
             $('.currentaddress').html(account);
             $('.ethaddress').attr('href', 'https://polygonscan.com/address/' + account);
