@@ -131,7 +131,7 @@ $(document).ready(function () {
             myContractInstance.methods.users(account).call().then(function (result) {
                 if (result[0]) {
                     localStorage.setItem("address", account);
-                    location.href = "https://turboshare.github.io/boolrun/Dashboard/";
+                    location.href = "https://maticforce.space/Home-Dashboard";
                 }
                 else {
                     $('.error').html('You need to register first');
@@ -160,7 +160,7 @@ $(document).ready(function () {
                 if (result1.status == "0x1") {
                     alert("success")
                     localStorage.setItem("address", account);
-                    location.href = "https://turboshare.github.io/boolrun/Dashboard/";
+                    location.href = "https://maticforce.space/Home-Dashboard";
                 }
                 else {
                     $('.error').html('Transaction Failed');
@@ -230,7 +230,7 @@ $(document).ready(function () {
                     if (receipt.status) {
                         alert("success")
                         localStorage.setItem("address", account);
-                        location.href = "https://turboshare.github.io/boolrun/Dashboard/";
+                        location.href = "https://maticforce.space/Home-Dashboard";
                     }
                     else {
                         $('.error').html('Transaction Failed');
@@ -255,7 +255,7 @@ $(document).ready(function () {
                        
 
                             localStorage.setItem("address", add);
-                            location.href = "https://turboshare.github.io/boolrun/Dashboard/";
+                            location.href = "https://maticforce.space/Home-Dashboard";
                         }
                         else {
                             $('.error').html('You need to register first');
@@ -327,8 +327,8 @@ $(document).ready(function () {
                         </div>
 <div class="w-full text-center m-t-30">
                             <p class="text-white">Contract address</p>
-                            <a href="https://polygonscan.com/" class="text-success" target="_blank">
-                                0x00008e70 <i class="fa fa-external-link"></i>
+                            <a href="https://polygonscan.com/0x243AF0B6ce6F76E00E634D955218bA2dab27d1bE" class="text-success" target="_blank">
+                                0x243AF0B6ce6F76E00E634D955218bA2dab27d1bE <i class="fa fa-external-link"></i>
                             </a>
                         </div>
                 </div>
