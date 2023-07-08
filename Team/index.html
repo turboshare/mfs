@@ -1,20 +1,20 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=1">
-
+<html lang="en" dir="ltr">
+<head>
     <script>
         var account = localStorage.getItem("address");
 
         if (account == null) {
             alert("You are not Logged In. Please Login first..!!");
-           location.href = "https://maticforce.space/login";
+            location.href = "https://maticforce.space/login";
         }
     </script>
+    <!-- Meta data -->
+    <meta charset="UTF-8">
 
-    <link rel="shortcut icon" type="image/x-icon" href="https://maticforce.space/Matic-Force-Logo.png">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="https://maticforce.space/Home-Dashboard/Content/Front-theme/theme-assets/images/ico/favicon.ico">
 
 
     <!-- Title -->
@@ -1452,14 +1452,13 @@ $(document).ready(function () {
    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
  <script src="https://maticforce.space/socialjs.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function (event) {
-            socialjs.init({
-                container: '.socialjs',
-                https: true
-            });
-        });
+    $(document).ready(function() {
+        $('.logoutuser').click(function () {
         
-      </script>
-  
+            var account = localStorage.removeItem("address", null);
+            location.href = "https://maticforce.space/login";
+        });
+    });
+    </script>
 </body>
 </html>
