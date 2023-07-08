@@ -533,6 +533,10 @@ window.addEventListener('load', function () {
             myContractInstance = MyContract;
           
         }
+
+        getVariableData();
+
+            checkbuyLevel();
          Directreferral();
     
     //$('#accordion11').append(str);
@@ -546,7 +550,9 @@ window.addEventListener('load', function () {
         const web3 = new Web3(new Web3.providers.HttpProvider(infura));
         MyContract = new web3.eth.Contract(abi, address);
         myContractInstance = MyContract;
+getVariableData();
 
+            checkbuyLevel();
             Directreferral();
     
     //$('#accordion11').append(str);
