@@ -246,7 +246,7 @@ function getVariableData() {
 function getReferralCommission() {
     
 
-    var level1 = parseFloat(0.0075); var level2 = parseFloat(0.005); var level3 = parseFloat(0.0025); var level4 = parseFloat(0.000005);
+    var level1 = parseFloat(5); var level2 = parseFloat(1); var level3 = parseFloat(1); var level4 = parseFloat(1); var level5 = parseFloat(1); var level6 = parseFloat(0.20);
 
     var referraltotal = parseFloat(0);
 
@@ -257,20 +257,28 @@ function getReferralCommission() {
                 var level = value.returnValues._level;
 
                 if (level == 1) {
-                    referraltotal = parseFloat(referraltotal) + parseFloat("0.01");
+                    referraltotal = parseFloat(referraltotal) + parseFloat("5");
 
                 }
                 else if (level == 2) {
 
-                    referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
+                    referraltotal = parseFloat(referraltotal) + parseFloat("1");
                 }
                 else if (level == 3) {
-                    referraltotal = parseFloat(referraltotal) + parseFloat("0.0025");
+                    referraltotal = parseFloat(referraltotal) + parseFloat("1");
+
+                }
+                else if (level == 4) {
+                    referraltotal = parseFloat(referraltotal) + parseFloat("1");
+
+                }
+                else if (level == 5) {
+                    referraltotal = parseFloat(referraltotal) + parseFloat("1");
 
                 }
                 else {
 
-                    referraltotal = parseFloat(referraltotal) + parseFloat("0.00025");
+                    referraltotal = parseFloat(referraltotal) + parseFloat("0.20");
 
                 }
 
@@ -466,7 +474,7 @@ function InDirectreferralCount(address, level) {
 function Transaction_Register() {
     
     var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', {filter:{ _user: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
-        var level1 = parseFloat(0.01); var level2 = parseFloat(0.005); var level3 = parseFloat(0.0025); var level4 = parseFloat(0.00025);
+        var level1 = parseFloat(5); var level2 = parseFloat(1); var level3 = parseFloat(1); var level4 = parseFloat(1); var level5 = parseFloat(1); var level6 = parseFloat(0.20);
 
         if (!error) {
             $.each(log, function (key, value) {
