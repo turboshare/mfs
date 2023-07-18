@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="https://maticforce.space/Home-Dashboard/Content/assets/plugins/bootstrap-daterangepicker/daterangepicker.css">
 
     <!-- Bootstrap-datepicker css -->
-    <link rel="stylesheet" href="https://maticforce.space/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="https://maticforce.space/Home-Dashboard/Content/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.css">
 
     <!-- Custom scroll bar css -->
     <link href="https://maticforce.space/Home-Dashboard/Content/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
@@ -91,9 +91,8 @@
                 <div class="app-header header top-header navbar-collapse ">
                     <div class="container-fluid">
                         <div class="d-flex">
-                         <div class="separator"><div class="separator" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em; text-align: center;"><img border="0" data-original-height="30" data-original-width="40" height="30" src="https://maticforce.space/images/menu.png" width="40" /></div></div>
-                            <a class="header-brand" href="https://maticforce.space/Team">
-                                <h3 style="margin-top: 16px;color: #141670;">Team</h3>
+                            <a class="header-brand" href="https://maticforce.space/Home-Dashboard">
+                                <h3 style="margin-top: 16px;color: #141670;">Matic Force</h3>
                                 
                                
                             </a>
@@ -110,7 +109,7 @@
                     <div class="first-sidemenu">
                         <div class="line-animations">
                             <ul class="resp-tabs-list hor_1">
-
+                                
                                  <li class="resp-tab-active active"><a href="https://maticforce.space/Home-Dashboard"><span class="side-menu__icon"></span><img src="https://maticforce.space/Home-Dashboard/Content/assets/img/homepage.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Home"></a></li>
                                 <li class="autopool"><a href="https://maticforce.space/SmartMatrix"><span class="side-menu__icon"></span><img src="https://maticforce.space/Home-Dashboard/Content/assets/img/m2.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Smart Matrix"></a></li>
                                 <li class="trans"><a href="https://maticforce.space/Transaction"><span class="side-menu__icon"></span><img src="https://maticforce.space/Home-Dashboard/Content/assets/img/m3.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Transations"></a></li>
@@ -128,20 +127,19 @@
             <!-- App-content opened -->
             <!-- App-content closed -->
         </div>
-
-<script> 
-var totalearned = 0;
+        
+        <script>
+        var totalearned = 0;
 function getVariableData() {
     // get variable values
     myContractInstance.methods.pool1currUserID().call().then(function (result) {
-        console.log('pool1users',result)
         $('.Pool1count').html(result);
         $('.pool1_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
     });
 
     myContractInstance.methods.pool2currUserID().call().then(function (result) {
         
-        $('.Pool2count').html(result);
+            $('.Pool2count').html(result);
         $('.pool2_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
     });
 
@@ -153,7 +151,7 @@ function getVariableData() {
 
     myContractInstance.methods.pool4currUserID().call().then(function (result) {
        
-         $('.Pool4count').html(result);
+            $('.Pool4count').html(result);
         $('.pool4_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result+ "</a>");
     });
 
@@ -295,7 +293,6 @@ function getPoolPaymentReceived() {
     var pool7_price = 10000;
     var pool8_price = 50000;
     
-
     var referraltotal = parseFloat(0);
 
     var events = myContractInstance.getPastEvents('getPoolPayment', {filter : { _receiver: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
@@ -469,7 +466,7 @@ function InDirectreferralCount(address, level) {
 function Transaction_Register() {
     
     var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', {filter:{ _user: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
-        var level1 = parseFloat(5); var level2 = parseFloat(1); var level3 = parseFloat(1); var level4 = parseFloat(1);
+        var level1 = parseFloat(0.01); var level2 = parseFloat(0.005); var level3 = parseFloat(0.0025); var level4 = parseFloat(0.00025);
 
         if (!error) {
             $.each(log, function (key, value) {
@@ -491,7 +488,7 @@ function Transaction_Pool() {
         var pool6_price = 5000;
         var pool7_price = 10000;
         var pool8_price = 50000;
-       
+        
         if (!error) {
             $.each(log, function (key, value) {
                 $('.transaction_autopool').append('<tr><td><a href="https://polygonscan.com/tx/' + value.transactionHash + '" target="_blank">' + value.transactionHash + '</a></td><td style=color:green>' + value.returnValues._user + '</td><td>' + value.returnValues._level + '</td><td>' + (value.returnValues._level == 1 ? pool1_price : value.returnValues._level == 2 ? pool2_price : value.returnValues._level == 3 ? pool3_price : value.returnValues._level == 4 ? pool4_price : value.returnValues._level == 5 ? pool5_price : value.returnValues._level == 6 ? pool6_price : value.returnValues._level == 7 ? pool7_price : value.returnValues._level == 8 ? pool8_price : value.returnValues._level == 9 ? pool9_price : pool10_price) + ' ETH</td></tr>');
@@ -499,20 +496,18 @@ function Transaction_Pool() {
         }
     });
 }
-</script>
-       
 
-<script>
+        </script>
+        
+        <script>
+        //const Web3 = require('web3');
 
-var myContractInstance, myContractInstance1;
+var myContractInstance;
 var account = localStorage.getItem("address");
-
 var abi = [{"constant":false,"inputs":[],"name":"buyPool1","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool5currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool5users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool3userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool1userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool8userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool1activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool1users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool4","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool5activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool9currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool4userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool2activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool7","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool9userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool1currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool4activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool9users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool2","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool7currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool10currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool6users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool8","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"getEthBalance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool3users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"LEVEL_PRICE","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"unlimited_level_price","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool2userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool8activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool4users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool6userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"requests","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"referrerID","type":"uint256"},{"internalType":"uint256","name":"referredUsers","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool2users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool8currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool7users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool9activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"uint256","name":"_referrerID","type":"uint256"}],"name":"regUser","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"ownerWallet","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool7activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool10activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool4currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool8users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool9","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"referrerID","type":"uint256"},{"internalType":"uint256","name":"referredUsers","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool6","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool2currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool3","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool3currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool5userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool7userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool10userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool3activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool10","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool6currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool10users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool5","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool6activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_referrer","type":"address"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"regLevelEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_referral","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"getMoneyForLevelEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"regPoolEntry","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_receiver","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"getPoolPayment","type":"event"}];
 var address = "0x243af0b6ce6f76e00e634d955218ba2dab27d1be";
-var MyContract;
 window.addEventListener('load', function () {
     if (typeof web3 !== 'undefined') {
-
        
         web3 = new Web3(web3.currentProvider);
 
@@ -520,909 +515,44 @@ window.addEventListener('load', function () {
         // initiate contract for an address
 
         myContractInstance = MyContract;
-        myContractInstance1 = MyContract;
-        //web3.eth.getAccounts().then(function (result) {
-        //    account = result[0];
-           
-        //});
-        
+
         if (web3.currentProvider.isTrust) {
 
             const infura = 'https://polygon-mainnet.infura.io/v3/c2b1f9ce72254350a04f5759c898c8b3';
             const web3 = new Web3(new Web3.providers.HttpProvider(infura));
             MyContract = new web3.eth.Contract(abi, address);
             myContractInstance = MyContract;
-          
+
         }
+        
 
-        getVariableData();
-
-            checkbuyLevel();
-         Directreferral();
-    
-    //$('#accordion11').append(str);
-
-           
 
     } else {
-        //  const Web3 = require('web3');
+       // const Web3 = require('web3');
 
         const infura = 'https://polygon-mainnet.infura.io/v3/c2b1f9ce72254350a04f5759c898c8b3';
         const web3 = new Web3(new Web3.providers.HttpProvider(infura));
         MyContract = new web3.eth.Contract(abi, address);
         myContractInstance = MyContract;
-getVariableData();
+    }
 
-            checkbuyLevel();
-            Directreferral();
+   
+    Directreferral();
     
     //$('#accordion11').append(str);
 
-        // document.getElementById('output').innerHtml = 'Please download and install Metamask: <a href="https://metamask.io/">https://metamask.io/</a>'
-    }
-
 
 })
-
-
-function checkbuyLevel() {
-
-    myContractInstance.methods.users(account).call().then(function (result) {
-     
-       
-            if (result[0]) {
-                checkPool1();
-                checkPool2();
-                checkPool3();
-                checkPool4();
-                checkPool5();
-                checkPool6();
-                checkPool7();
-                checkPool8();
-                checkPool9();
-                checkPool10();
-            }
-       
-
-    });
-
-}
-
-function checkPool1() {
-
-
-
-    myContractInstance.methods.pool1users(account).call().then(function (result) {
-        if(result[1] > 0){
-        $('#pool1sequencue').text(result[1])
-        $('#pool1sequencue').show();
-        $('.pool1sequencue').show();}
-       
-            if (!result[0]) {
-                $('.pool1pay').show();
-                $('.pool1transaction').hide();
-            }
-            else if (result[2] == 8) {
-                $('.pool1status').show();
-                $('.pool1status .card-status').addClass('bg-success');
-                $('.pool1status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
-                $('.pool1transaction').html('Received No. of Payments ' + result[2]);
-
-
-            }
-            else if (result[2]< 8) {
-                $('.pool1status').show();
-                $('.pool1status .card-status').addClass('bg-warning');
-                $('.pool1status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
-                $('.pool1transaction').html('Received No. of Payments ' + result[2]);
-                $('.currentautopoolno').html(1);
-            }
-
-
-       
-
-    });
-
-}
-
-function checkPool2() {
-
-    myContractInstance.methods.pool2users(account).call().then(function (result) {
-   
-        if(result[1] > 0){
-            $('#pool2sequencue').text(result[1])
-            $('#pool2sequencue').show();
-            $('.pool2sequencue').show();
-        }
-       
-            if (!result[0]) {
-                $('.pool2pay').show();
-                $('.pool2transaction').hide();
-            }
-            else if (result[2] == 8) {
-                $('.pool2status').show();
-                $('.pool2status .card-status').addClass('bg-success');
-                $('.pool2status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
-                $('.pool2transaction').html('Received No. of Payments ' + result[2]);
-
-
-            }
-            else if (result[2] < 8) {
-                $('.pool2status').show();
-                $('.pool2status .card-status').addClass('bg-warning');
-                $('.pool2status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
-                $('.pool2transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(2);
-                console.log("ok")
-                $('#numbersec').show()
-                
-            }
-
-
-
-     
-    });
-
-}
-
-function checkPool3() {
-
-
-    myContractInstance.methods.pool3users(account).call().then(function (result) {
-        console.log("pool3users",result)
-        if(result[1] > 0){
-        $('#pool3sequencue').text(result[1])
-        $('#pool3sequencue').show();
-        $('.pool3sequencue').show();}
-            if (!result[0]) {
-                $('.pool3pay').show();
-                $('.pool3transaction').hide();
-            }
-            else if (result[2] == 8) {
-                $('.pool3status').show();
-                $('.pool3status .card-status').addClass('bg-success');
-                $('.pool3status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
-                $('.pool3transaction').html('Received No. of Payments ' + result[2]);
-
-
-            }
-            else if (result[2] < 8) {
-                $('.pool3status').show();
-                $('.pool3status .card-status').addClass('bg-warning');
-                $('.pool3status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
-                $('.pool3transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(3);
-            }
-
-
-
+        </script>
         
-    });
-
-}
-
-
-function checkPool4() {
-    myContractInstance.methods.pool4users(account).call().then(function (result) {
-        if(result[1] > 0){
-        $('#pool4sequencue').text(result[1])
-        $('#pool4sequencue').show();
-        $('.pool4sequencue').show();}
-       
-            if (!result[0]) {
-                $('.pool4pay').show();
-                $('.pool4transaction').hide();
-            }
-            else if (result[2] == 8) {
-                $('.pool4status').show();
-                $('.pool4status .card-status').addClass('bg-success');
-                $('.pool4status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
-                $('.pool4transaction').html('Received No. of Payments ' + result[2]);
-
-
-            }
-            else if (result[2] < 8) {
-                $('.pool4status').show();
-                $('.pool4status .card-status').addClass('bg-warning');
-                $('.pool4status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
-                $('.pool4transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(4);
-            }
-
-       
-
-    });
-
-}
-
-function checkPool5() {
-    myContractInstance.methods.pool5users(account).call().then(function (result) {
-        if(result[1] > 0){
-        $('#pool5sequencue').text(result[1])
-        $('#pool5sequencue').show();
-        $('.pool5sequencue').show();}
-       
-            if (!result[0]) {
-                $('.pool5pay').show();
-                $('.pool5transaction').hide();
-            }
-            else if (result[2] == 8) {
-                $('.pool5status').show();
-                $('.pool5status .card-status').addClass('bg-success');
-                $('.pool5status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
-                $('.pool5transaction').html('Received No. of Payments ' + result[2]);
-
-
-            }
-            else if (result[2] < 8) {
-                $('.pool5status').show();
-                $('.pool5status .card-status').addClass('bg-warning');
-                $('.pool5status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
-                $('.pool5transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(5);
-            }
-
-
-       
-
-    });
-
-}
-
-function checkPool6() {
-    myContractInstance.methods.pool6users(account).call().then(function (result) {
-        if(result[1] > 0){
-        $('#pool6sequencue').text(result[1])
-        $('#pool6sequencue').show();
-        $('.pool6sequencue').show();}
-        
-            if (!result[0]) {
-                $('.pool6pay').show();
-                $('.pool6transaction').hide();
-            }
-            else if (result[2] == 8) {
-                $('.pool6status').show();
-                $('.pool6status .card-status').addClass('bg-success');
-                $('.pool6status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
-                $('.pool6transaction').html('Received No. of Payments ' + result[2]);
-
-
-            }
-            else if (result[2] < 8) {
-                $('.pool6status').show();
-                $('.pool6status .card-status').addClass('bg-warning');
-                $('.pool6status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
-                $('.pool6transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(6);
-            }
-
-       
-    });
-
-}
-
-function checkPool7() {
-    myContractInstance.methods.pool7users(account).call().then(function ( result) {
-        if(result[1] > 0){
-        $('#pool7sequencue').text(result[1])
-        $('#pool7sequencue').show();
-        $('.pool7sequencue').show();}
-        
-            if (!result[0]) {
-                $('.pool7pay').show();
-                $('.pool7transaction').hide();
-            }
-            else if (result[2] == 8) {
-                $('.pool7status').show();
-                $('.pool7status .card-status').addClass('bg-success');
-                $('.pool7status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
-                $('.pool7transaction').html('Received No. of Payments ' + result[2]);
-
-
-            }
-            else if (result[2] < 8) {
-                $('.pool7status').show();
-                $('.pool7status .card-status').addClass('bg-warning');
-                $('.pool7status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
-                $('.pool7transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(7);
-            }
-
-
-
-        
-
-    });
-
-}
-
-function checkPool8() {
-    myContractInstance.methods.pool8users(account).call().then(function ( result) {
-        if(result[1] > 0){
-        $('#pool8sequencue').text(result[1])
-        $('#pool8sequencue').show();
-        $('.pool8sequencue').show();}
-       
-            if (!result[0]) {
-                $('.pool8pay').show();
-                $('.pool8transaction').hide();
-            }
-            else if (result[2] == 8) {
-                $('.pool8status').show();
-                $('.pool8status .card-status').addClass('bg-success');
-                $('.pool8status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
-                $('.pool8transaction').html('Received No. of Payments ' + result[2]);
-
-
-            }
-            else if (result[2] < 8) {
-                $('.pool8status').show();
-                $('.pool8status .card-status').addClass('bg-warning');
-                $('.pool8status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
-                $('.pool8transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(8);
-            }
-
-
-       
-
-    });
-
-}
-
-$(document).ready(function () {
-    $('.pool1pay').click(function (demo) {
-       
-        try {
-
-            ethereum.enable();
-            myContractInstance1.methods.buyPool1().send({ from: account, value: 10000000000000000000, gas: 300000 })
-                .on('transactionHash', function (hash) {
-                    console.log('------->',hash)
-                    $('.pool1pay').hide();
-                    $('.pool1transaction').show();
-                    $('.pool1transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
-              
-            });
-        }
-        catch (err) {
-            console.log(err)
-        }
-    });
-
-
-    $('.pool2pay').click(function () {
-        try {
-            ethereum.enable();
-          
-
-            myContractInstance1.methods.buyPool2().send({ from: account, value: 50000000000000000000, gas: 300000 })
-                .on('transactionHash', function (hash) {
-
-                    $('.pool2pay').hide();
-                    $('.pool2transaction').show();
-                    $('.pool2transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
-
-                });
-        }
-        catch (err) {
-            console.log(err)
-        }
-    });
-
-    $('.pool3pay').click(function () {
-        try {
-            ethereum.enable();
-
-            myContractInstance1.methods.buyPool3().send({ from: account, value: 100000000000000000000, gas: 300000 })
-                .on('transactionHash', function (hash) {
-
-                    $('.pool3pay').hide();
-                    $('.pool3transaction').show();
-                    $('.pool3transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
-
-                });
-        }
-        catch (err) {
-            alert('Please download and install Metamask and Loggin to account');
-        }
-    });
-
-    $('.pool4pay').click(function () {
-        try {
-            ethereum.enable();
-            
-            myContractInstance1.methods.buyPool4().send({ from: account, value: 500000000000000000000, gas: 300000 })
-                .on('transactionHash', function (hash) {
-
-                    $('.pool4pay').hide();
-                    $('.pool4transaction').show();
-                    $('.pool4transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
-
-                });
-        }
-        catch (err) {
-            alert('Please download and install Metamask and Loggin to account');
-        }
-    });
-
-    $('.pool5pay').click(function () {
-        try {
-            ethereum.enable();           
-
-            myContractInstance1.methods.buyPool5().send({ from: account, value: 1000000000000000000000, gas: 300000 })
-                .on('transactionHash', function (hash) {
-
-                    $('.pool5pay').hide();
-                    $('.pool5transaction').show();
-                    $('.pool5transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
-
-                });
-        }
-        catch (err) {
-            alert('Please download and install Metamask and Loggin to account');
-        }
-    });
-
-
-    $('.pool6pay').click(function () {
-        try {
-            ethereum.enable();
-
-            myContractInstance1.methods.buyPool6().send({ from: account, value: 5000000000000000000000, gas: 300000 })
-                .on('transactionHash', function (hash) {
-
-                    $('.pool6pay').hide();
-                    $('.pool6transaction').show();
-                    $('.pool6transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
-
-                });
-        }
-        catch (err) {
-            alert('Please download and install Metamask and Loggin to account');
-        }
-    });
-
-
-    $('.pool7pay').click(function () {
-        try {
-            ethereum.enable();
-
-            myContractInstance1.methods.buyPool7().send({ from: account, value: 10000000000000000000000, gas: 300000 })
-                .on('transactionHash', function (hash) {
-
-                    $('.pool7pay').hide();
-                    $('.pool7transaction').show();
-                    $('.pool7transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
-
-                });
-
-
-        }
-        catch (err) {
-            alert('Please download and install Metamask and Loggin to account');
-        }
-    });
-
-
-    $('.pool8pay').click(function () {
-        try {
-            ethereum.enable();
-
-            myContractInstance1.methods.buyPool8().send({ from: account, value: 50000000000000000000000, gas: 300000 })
-                .on('transactionHash', function (hash) {
-
-                    $('.pool8pay').hide();
-                    $('.pool8transaction').show();
-                    $('.pool8transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
-
-                });
-
-        }
-        catch (err) {
-            alert('Please download and install Metamask and Loggin to account');
-        }
-    });
-
-
-    $('.pool9pay').click(function () {
-        try {
-            ethereum.enable();
-            
-            myContractInstance1.methods.buyPool9().send({ from: account, value: 50000000000000000000, gas: 300000 })
-                .on('transactionHash', function (hash) {
-
-                    $('.pool9pay').hide();
-                    $('.pool9transaction').show();
-                    $('.pool9transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
-
-                });
-        }
-        catch (err) {
-            alert('Please download and install Metamask and Loggin to account');
-        }
-    });
-
-
-    $('.pool10pay').click(function () {
-        try {
-            ethereum.enable();
-           
-            myContractInstance1.methods.buyPool10().send({ from: account, value: 100000000000000000000, gas: 300000 })
-                .on('transactionHash', function (hash) {
-
-                    $('.pool10pay').hide();
-                    $('.pool10transaction').show();
-                    $('.pool10transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
-
-                });
-        }
-        catch (err) {
-            alert('Please download and install Metamask and Loggin to account');
-        }
-    });
-
-
-});
-</script>
-
-
-
-
-
-<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-        
-        
-  <script src="https://maticforce.space/Home-Dashboard/assets/js/socialjs.js"></script>
-       
-        
-        
-<script>
-    document.addEventListener("DOMContentLoaded", function (event) {
-        socialjs.init({
-            container: '.socialjs',
-            https: true
-        });
-    });
-</script>
-
-<script>
-    function myFunction() {
-        /* Get the text field */
-        var copyText = document.getElementById("myInput");
-      
-        /* Select the text field */
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-        /* Copy the text inside the text field */
-        document.execCommand("copy");
-
-        /* Alert the copied text */
-        alert("Copied the text: " + copyText.value);
-    }
-
-</script>
-
-<script>
-
-    function myFunction1() {
-        /* Get the text field */
-        var copyText = document.getElementById("myInput1");
-
-        /* Select the text field */
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-        /* Copy the text inside the text field */
-        document.execCommand("copy");
-
-        /* Alert the copied text */
-        alert("Copied the text: " + copyText.value);
-    }
-</script>
-
-
-
+        <!-- Sidemenu closed -->
+<!-- App-content opened -->
 <div class="app-content">
     <div class="section">
-
-        <!-- Banner opened -->
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="banner banner-color mt-0">
-                    <div class="col-xl-2 col-lg-3 col-md-12">
-<div class="separator"><div class="separator" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em; text-align: center;"><a href="https://telegram.me/MaticForce_Space" target="_blank"><img border="0" data-original-height="86" data-original-width="200" height="64" src="https://maticforce.space/Join-Telegram-Channel.png" width="200" /></a></div></div>                    </div>
-                    <div class="page-content col-xl-7 col-lg-6 col-md-12">
-                        <h3 class="mb-1">User ID : <span class="currentuserid"></span></h3>
-
-                        <input class="currentuseridlink" type="text" id="myInput" style="opacity:0; height:0px;" />
-                        <input class="currentuseridlinknew" type="text" id="myInput1" style="opacity:0; height:0px;"/>
-
-                      <p class="mb-0 fs-16">Your Referral link : <span class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
+        
 
 
 
-                        <p class="mb-0 fs-16">Your Matic address:<a class="ethaddress" href="" target="_blank"> <span class="currentaddress"></span> <i class="fa fa fa-external-link"></i></a></p>
-                    </div>
-                   </div>
-                    <div class="col-xl-3 col-lg-3 col-md-3 text-right d-flex d-block">
-                        
-        </div>
-        <!-- Banner opened -->
-              <!-- row opened -->
-        <div class="row">
-            <div class="col-xl-12 col-md-12 col-lg-12">
-                <div class="card bg-dark1">
-                    <div class="js-conveyor-example">
-                        <ul class="news-crypto">
-                            <li>
-                                <div>
-                                    <div class="row">
-                                        <div class="d-flex">
-                                            <div class="">
-                                                <img src="https://https://maticforce.space/Smart/user.png" class="w-7 h-7" alt="">
-                                            </div>
-                                            <div class="ml-3">
-                                                <p class="text-white mb-1 fs-12">Total Users</p>
-                                                <div class="h5 m-0 fs-14 text-warning"><span class="TotalUsers"></span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <div class="row">
-                                        <div class="d-flex">
-                                            <div class="">
-                                                <img src="https://https://maticforce.space/Smart/1.png" class="w-7 h-7" alt="">
-                                            </div>
-                                            <div class="ml-3">
-                                                <p class="text-white mb-1 fs-12">Pool 1 Users</p>
-                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool1count"></span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <div class="row">
-                                        <div class="d-flex">
-                                            <div class="">
-                                                <img src="https://https://maticforce.space/Smart/2.png" class="w-7 h-7" alt="">
-                                            </div>
-                                            <div class="ml-3">
-                                                <p class="text-white mb-1 fs-12">Pool 2 Users</p>
-                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool2count"></span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <div class="row">
-                                        <div class="d-flex">
-                                            <div class="">
-                                                <img src="https://https://maticforce.space/Smart/3.png" class="w-7 h-7" alt="">
-                                            </div>
-                                            <div class="ml-3">
-                                                <p class="text-white mb-1 fs-12">Pool 3 Users</p>
-                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool3count"></span></div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <div class="row">
-                                        <div class=" d-flex">
-                                            <div class="">
-                                                <img src="https://https://maticforce.space/Smart/4.png" class="w-7 h-7" alt="">
-                                            </div>
-                                            <div class="ml-3">
-                                                <p class="text-white mb-1 fs-12">Pool 4 Users</p>
-                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool4count"></span></div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <div class="row">
-                                        <div class=" d-flex">
-                                            <div class="">
-                                                <img src="https://https://maticforce.space/Smart/5.png" class="w-7 h-7" alt="">
-                                            </div>
-                                            <div class="ml-3">
-                                                <p class="text-white mb-1 fs-12">Pool 5 Users</p>
-                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool5count"></span></div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <div class="row">
-                                        <div class=" d-flex">
-                                            <div class="">
-                                                <img src="https://https://maticforce.space/Smart/6.png" class="w-7 h-7" alt="">
-                                            </div>
-                                            <div class="ml-3">
-                                                <p class="text-white mb-1 fs-12">Pool 6 Users</p>
-                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool6count"></span></div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <div class="row">
-                                        <div class=" d-flex">
-                                            <div class="">
-                                                <img src="https://https://maticforce.space/Smart/7.png" class="w-7 h-7" alt="">
-                                            </div>
-                                            <div class="ml-3">
-                                                <p class="text-white mb-1 fs-12">Pool 7 Users</p>
-                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool7count"></span></div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <div class="row">
-                                        <div class=" d-flex">
-                                            <div class="">
-                                                <img src="https://https://maticforce.space/Smart/8.png" class="w-7 h-7" alt="">
-                                            </div>
-                                            <div class="ml-3">
-                                                <p class="text-white mb-1 fs-12">Pool 8 Users</p>
-                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool8count"></span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <div class="row">
-                                        <div class=" d-flex">
-                                            <div class="">
-                                                <img src="https://https://maticforce.space/Smart/9.png" class="w-7 h-7" alt="">
-                                            </div>
-                                            <div class="ml-3">
-                                                <p class="text-white mb-1 fs-12">Pool 9 Users</p>
-                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool9count"></span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <div class="row">
-                                        <div class=" d-flex">
-                                            <div class="">
-                                                <img src="https://https://maticforce.space/Smart/10.png" class="w-7 h-7" alt="">
-                                            </div>
-                                            <div class="ml-3">
-                                                <p class="text-white mb-1 fs-12">Pool 10 Users</p>
-                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool10count"></span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- row closed -->
-        <!-- row opened -->
-        <div class="row">
-            <div class="col-md-12 col-lg-6 col-xl-3">
-                <div class="card overflow-hidden bg-primary">
-                    <div class="card-body bg-gradient-success">
-                        <div class="d-flex">
-                            <div class="">
-                                <p class="mb-2 h6">Referral Earning ETH</p>
-                                <h2 class="mb-1 "><span class="totalreferral">0</span></h2>
-                            </div>
-                            <div class=" my-auto ml-auto">
-                                <div class="chart-wrapper text-center">
-                                    <img src="https://https://maticforce.space/Smart/d1.png" class="h-7" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="col-md-12 col-lg-6 col-xl-3">
-                <div class="card overflow-hidden bg-gradient-secondary">
-                    <div class="card-body text-white">
-
-                        <div class="d-flex">
-                            <div class="">
-                                <p class="mb-2 h6">AutoPool Earning ETH</p>
-                                <h2 class="mb-1 "><span class="totalpoolpayment">0</span></h2>
-                            </div>
-                            <div class=" my-auto ml-auto">
-                                <div class="chart-wrapper text-center">
-                                    <img src="https://https://maticforce.space/Smart/d2.png" class="h-7" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-
-
-
-
-            <div class="col-md-12 col-lg-6 col-xl-3">
-                <div class="card overflow-hidden bg-teal">
-                    <div class="card-body text-white">
-                        <div class="d-flex">
-                            <div class="">
-                                <p class="mb-2 h6">Direct Team</p>
-                                <h2 class="mb-1 "><span class="referralcount">0</span></h2>
-                            </div>
-                            <div class=" my-auto ml-auto">
-                                <div class="chart-wrapper text-center">
-                                    <img src="https://https://maticforce.space/Smart/d4.png" class="h-7" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-md-12 col-lg-6 col-xl-3">
-                <div class="card overflow-hidden" style="background-color:#004172;color:#fff;">
-
-                    <div class="card-body text-white">
-                        <div class="d-flex">
-                            <div class="">
-                                <p class="mb-2 h6">Indirect Team</p>
-                                <h2 class="mb-1 "><span class="indirect_referralcount">0</span></h2>
-                            </div>
-
-                            <div class=" my-auto ml-auto">
-                                <div class="chart-wrapper text-center">
-                                    <img src="https://https://maticforce.space/Smart/d5.png" class="h-7" alt="">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            
-        </div>
-        <!-- row closed -->
-       
-        <!-- row opened -->
-        <!-- Banner opened -->
-        <!-- row opened -->
-          
-        </div>
-      <p><h2>Coming Soon</h2></p>
-        <!-- App-content opened -->
-<div class="app-content">
-    <div class="section">
         <!-- row opened -->
         <div class="row">
             <div class="col-md-12">
@@ -1456,26 +586,7 @@ $(document).ready(function () {
 
     })
 </script>
-
-            
-        <!-- row closed -->
-
-    </div>
-</div>
-
-
-<style>
-    .pool1pay, .pool2pay, .pool3pay, .pool4pay, .pool5pay, .pool6pay, .pool7pay, .pool8pay, .pool9pay, .pool10pay {
-        display: none
-    }
-
-    .pool1status, .pool2status, .pool3status, .pool4status, .pool5status, .pool6status, .pool7status, .pool8status, .pool9status, .pool10status {
-        display: none
-    }
-</style>
-
-
-
+        
         <!-- Footer opened -->
         <footer class="footer-main leftmenu-footer">
             <div class="container">
@@ -1488,6 +599,8 @@ $(document).ready(function () {
                     </div>
                     <div class="col-md-6  mt-2 mb-2 text-center">
                         Copyright © 2023 <a href="https://maticforce.space" class="fs-14 text-primary">https://maticforce.space</a>
+                   
+                    </div>
                     </div>
                 </div>
             </div>
@@ -1498,70 +611,69 @@ $(document).ready(function () {
     <!-- Back-to-top -->
     <a href="#top" id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
-   <!-- Jquery-scripts -->
-   <script src="https://1dapp.github.io/Home-Dashboard/Content/assets/js/vendors/jquery-3.2.1.min.js"></script>
+    <!-- Jquery-scripts -->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/js/vendors/jquery-3.2.1.min.js"></script>
 
-   <!-- Moment js-->
-   <script src="https://1dapp.github.io/Home-Dashboard/Content/assets/plugins/moment/moment.min.js"></script>
+    <!-- Moment js-->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/moment/moment.min.js"></script>
 
-   <!-- Bootstrap-scripts js -->
-   <script src="https://1dapp.github.io/Home-Dashboard/Content/assets/js/vendors/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap-scripts js -->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/js/vendors/bootstrap.bundle.min.js"></script>
 
-   <!-- Sparkline JS-->
-   <script src="https://1dapp.github.io/signup/jquery.sparkline.min.js"></script>
+    <!-- Sparkline JS-->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/js/vendors/jquery.sparkline.min.js"></script>
 
-   <!-- Bootstrap-daterangepicker js -->
-   <script src="https://1dapp.github.io/signup/daterangepicker.js"></script>
+    <!-- Bootstrap-daterangepicker js -->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-   <!-- Bootstrap-datepicker js -->
-   <script src="https://1dapp.github.io/signup/bootstrap-datepicker.js"></script>
+    <!-- Bootstrap-datepicker js -->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
 
-   <!-- Chart-circle js -->
-   <script src="https://1dapp.github.io/signup/circle-progress.min.js"></script>
+    <!-- Chart-circle js -->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/js/vendors/circle-progress.min.js"></script>
 
-   <!-- Rating-star js -->
-   <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/rating/jquery.rating-stars.js"></script>
+    <!-- Rating-star js -->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/rating/jquery.rating-stars.js"></script>
 
-   <!-- Custom scroll bar js-->
-   <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- Custom scroll bar js-->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
 
-   <!-- P-scroll js -->
-   <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/p-scroll/p-scroll.js"></script>
-   <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/p-scroll/p-scroll-leftmenu.js"></script>
+    <!-- P-scroll js -->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/p-scroll/p-scroll.js"></script>
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/p-scroll/p-scroll-leftmenu.js"></script>
 
-   <!-- Sidemenu js-->
-   <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/sidemenu/sidemenu.js"></script>
+    <!-- Sidemenu js-->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/sidemenu/sidemenu.js"></script>
 
-   <!-- Sidemenu-respoansive-tabs js -->
-   <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/sidemenu-responsive-tabs/js/sidemenu-responsive-tabs.js"></script>
+    <!-- Sidemenu-respoansive-tabs js -->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/sidemenu-responsive-tabs/js/sidemenu-responsive-tabs.js"></script>
 
-   <!-- Leftmenu js -->
-   <script src="https://maticforce.space/Home-Dashboard/Content/assets/js/left-menu.js"></script>
+    <!-- Leftmenu js -->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/js/left-menu.js"></script>
 
-   <!--Newsticker js-->
-   <script src="https://1dapp.github.io/signup/jquery.jConveyorTicker.js"></script>
-   <script src="https://maticforce.space/Home-Dashboard/Content/assets/js/newsticker.js"></script>
+    <!--Newsticker js-->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/newsticker/jquery.jConveyorTicker.js"></script>
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/js/newsticker.js"></script>
 
-   <!-- Chart js-->
-   <script src="https://1dapp.github.io/Home-Dashboard/assets/plugins/chart/chart.min.js"></script>
-                
-   <!-- Nice-select js-->
-   <script src="https://1dapp.github.io/signup/jquery.nice-select.js"></script>
-   <script src="https://1dapp.github.io/signup/nice-select.js"></script>
+    <!-- Chart js-->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/chart/chart.min.js"></script>
 
-   <!-- Apexchart js-->
-   <script src="https://maticforce.space/Home-Dashboard/Content/assets/js/apexcharts.js"></script>
+    <!-- Nice-select js-->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/jquery-nice-select/js/jquery.nice-select.js"></script>
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/jquery-nice-select/js/nice-select.js"></script>
 
-   <!-- Rightsidebar js -->
-   <script src="https://1dapp.github.io/signup/sidebar.js"></script>
+    <!-- Apexchart js-->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/js/apexcharts.js"></script>
 
-   <!-- Index js-->
-   <script src="https://1dapp.github.io/signup/index2.js"></script>
+    <!-- Rightsidebar js -->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/plugins/sidebar/sidebar.js"></script>
 
-   <!-- Custom js-->
-   <script src="https://1dapp.github.io/signup/custom.js"></script>
-   <!--LOgout Js-->
-   
+    <!-- Index js-->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/js/index2.js"></script>
+
+    <!-- Custom js-->
+    <script src="https://maticforce.space/Home-Dashboard/Content/assets/js/custom.js"></script>
+    <!--LOgout Js-->
     
     <script> 
      $(document).ready(function() {
@@ -1572,18 +684,8 @@ $(document).ready(function () {
         });
     });
     </script>
-  
-  
-   <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
- <script src="https://maticforce.space/socialjs.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('.logoutuser').click(function () {
-        
-            var account = localStorage.removeItem("address", null);
-            location.href = "https://maticforce.space/login";
-        });
-    });
-    </script>
 </body>
 </html>
+
+        
+        
