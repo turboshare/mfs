@@ -140,7 +140,7 @@ function loaddata(poolno) {
       
         if (web3.currentProvider.isTrust) {
 
-            const infura = 'https://mainnet.infura.io/v3/d248eb83f39345b8beab85f768ad95ee';
+            const infura = 'https://polygon-mainnet.infura.io/v3/c2b1f9ce72254350a04f5759c898c8b3';
             const web3 = new Web3(new Web3.providers.HttpProvider(infura));
             MyContract = new web3.eth.Contract(abi, address);
             myContractInstance = MyContract;
@@ -155,7 +155,7 @@ function loaddata(poolno) {
     } else {
       //  const Web3 = require('web3');
 
-        const infura = 'https://mainnet.infura.io/v3/a380edd901454cf6ba4b4cefe4c8f7be';
+        const infura = 'https://polygon-mainnet.infura.io/v3/c2b1f9ce72254350a04f5759c898c8b3';
         const web3 = new Web3(new Web3.providers.HttpProvider(infura));
         MyContract = new web3.eth.Contract(abi, address);
         myContractInstance = MyContract;
@@ -306,12 +306,12 @@ function loaddata(poolno) {
                                 <table class="table card-table table-striped text-nowrap table-bordered">
                                     <thead class="border-top">
                                         <tr>
-                                            <th>SmartMatrix No </th>
+                                            <th>Smart Matrix No </th>
 
 
                                             <th>Matic Address</th>
 
-                                            <th>Pool sequence no 
+                                            <th>Smart Matrix No 
                                             <span type="button" class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pool Sequence number : It's a serial number of autopool generates while user enter at Autopool and TX Timestamp recorded on Ethereum Blockchain."><i class="fa fa-info-circle" ></i></span> </th>
                                             <th>Payment Received </th>
                                             <th>User id</th>
