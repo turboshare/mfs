@@ -166,9 +166,9 @@ $(document).ready(function () {
     myContractInstance.methods.pool1currUserID().call().then(function (result) {
         $('.Pool1count').html(result);
     });
-        myContractInstance.methods.pool1userList.call().then(function (result) {
-    myContractInstance.methods.pool1activeUserID(result).call().then(function (result1) {
-         $('.pool1active').html(result1);
+
+    myContractInstance.methods.pool1activeUserID().call().then(function (result) {
+         $('.pool1active').html(result);
         });
     });
     
