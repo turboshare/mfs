@@ -166,7 +166,7 @@ $(document).ready(function () {
 
 
     myContractInstance.methods.pool1users(account).call().then(function (result) {
-        $('.pool1sequencue').show();
+        $('.pool1sequencue').show(result);
     });
 
     myContractInstance.methods.pool1activeUserID().call().then(function (result) {
