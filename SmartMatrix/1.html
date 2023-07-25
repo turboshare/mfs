@@ -164,14 +164,6 @@ $(document).ready(function () {
         $('.Pool1count').html(result);
     });
 
-
-    myContractInstance.methods.pool1users(account).call().then(function (result) {
-        if(result[1] > 0){
-        $('#pool1sequencue').text(result[1])
-        $('#pool1sequencue').show();
-        $('.pool1sequencue').show();
-    });
-
     myContractInstance.methods.pool1activeUserID().call().then(function (result) {
          $('.Pool1active').html(result);
         });
