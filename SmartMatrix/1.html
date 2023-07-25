@@ -158,7 +158,7 @@ $(document).ready(function () {
         MyContract = new web3.eth.Contract(abi, address);
         myContractInstance = MyContract;
 
-  
+    }
     // get variable values
     myContractInstance.methods.pool1currUserID().call().then(function (result) {
         $('.Pool1count').html(result);
