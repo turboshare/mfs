@@ -164,6 +164,11 @@ $(document).ready(function () {
         $('.Pool1count').html(result);
     });
 
+
+    myContractInstance.methods.pool1users(account).call().then(function (result) {
+        $('.pool1sequencue').show();
+    });
+
     myContractInstance.methods.pool1activeUserID().call().then(function (result) {
          $('.Pool1active').html(result);
         });
@@ -251,6 +256,7 @@ $(document).ready(function () {
                                         <tr>
                                             <th>Smart Matrix </th>
                                              <th>Total Users</th>
+                                            <th>Your Position Number</th>
                                             <th>Active Users</th>
                                             <th>Entry Fees</th>
                                             <th>Users X MATIC = Profit</th>
@@ -262,7 +268,7 @@ $(document).ready(function () {
                                         <tr>
                                             <td><img src="https://maticforce.space/Smart/1.png" class="w-6" alt=""></td>
                                             <td><span class="Pool1count"></span><br>
-                                                <span class="pool1sequencue"></span>
+                                                <td><span class="pool1sequencue"></span></td>
                                             </td>
                                             <td><span class="Pool1active"></span>
                                             </td>
