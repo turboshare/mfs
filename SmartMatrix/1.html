@@ -165,7 +165,7 @@ $(document).ready(function () {
     });
 
 
-    myContractInstance.methods.pool1users(account).call().then(function (result) {
+    myContractInstance.methods.pool1users().call().then(function (result) {
         $('.pool1sequencue').html(result);
     });
 
