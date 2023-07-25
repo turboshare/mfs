@@ -170,7 +170,6 @@ $(document).ready(function () {
     myContractInstance.methods.pool1activeUserID().call().then(function (result) {
          $('.pool1active').html(result);
         });
-    });
     
     myContractInstance.methods.pool1activeUserID().call().then(function (result) {
   myContractInstance.methods.pool1userList(result).call().then(function (result1) {
