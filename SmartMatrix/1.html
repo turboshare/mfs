@@ -169,7 +169,10 @@ $(document).ready(function () {
 
     
     myContractInstance.methods.pool1activeUserID().call().then(function (result) {
-        myContractInstance.methods.pool1userList(result).call().then(function (result1) {
+        $('.Pool1active').html(result);
+    });
+    
+   myContractInstance.methods.pool1userList(result).call().then(function (result1) {
             $('.pool1_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
         });
     });
@@ -251,6 +254,7 @@ $(document).ready(function () {
                                         <tr>
                                             <th>Smart Matrix </th>
                                              <th>Total Users</th>
+                                            <th>Active Users</th>
                                             <th>Entry Fees</th>
                                             <th>Users X MATIC = Profit</th>
                                             <th>Current User Address</th>
@@ -260,7 +264,9 @@ $(document).ready(function () {
                                     <tbody>
                                         <tr>
                                             <td><img src="https://maticforce.space/Smart/1.png" class="w-6" alt=""></td>
-                                            <td><span class="Pool1count"></span><br>
+                                            <td><span class="Pool1count"></span>
+                                            </td>
+                                            <td><span class="Pool1active"></span>
                                             </td>
                                             <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 10 MATIC </td>
                                             <td>
