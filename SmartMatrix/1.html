@@ -92,8 +92,8 @@
                     <div class="container-fluid">
                         <div class="d-flex">
                                                      <div class="separator"><div class="separator" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em; text-align: center;"><img border="0" data-original-height="30" data-original-width="40" height="30" src="https://maticforce.space/images/menu.png" width="40" /></div></div>
-                            <a class="header-brand" href="https://maticforce.space/SmartMatrix/1">
-                                <h3 style="margin-top: 16px;color: #141670;">Smart Matrix 1</h3>
+                            <a class="header-brand" href="https://maticforce.space/SmartMatrix">
+                                <h3 style="margin-top: 16px;color: #141670;">Smart Matrix</h3>
                                 
                                
                             </a>
@@ -112,7 +112,7 @@
                             <ul class="resp-tabs-list hor_1">
                                 
                                  <li class="resp-tab-active active"><a href="https://maticforce.space/Home-Dashboard"><span class="side-menu__icon"></span><img src="https://maticforce.space/Home-Dashboard/Content/assets/img/homepage.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Home"></a></li>
-                                <li class="smartmatrix"><a href="https://maticforce.space/SmartMatrix"><span class="side-menu__icon"></span><img src="https://maticforce.space/Home-Dashboard/Content/assets/img/m2.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="SmartMatrix"></a></li>
+                                <li class="autopool"><a href="https://maticforce.space/SmartMatrix"><span class="side-menu__icon"></span><img src="https://maticforce.space/Home-Dashboard/Content/assets/img/m2.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="SmartMatrix"></a></li>
                                 <li class="trans"><a href="https://maticforce.space/Transaction"><span class="side-menu__icon"></span><img src="https://maticforce.space/Home-Dashboard/Content/assets/img/m3.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Transations"></a></li>
                                 <li class="team2"><a href="https://maticforce.space/Team"><span class="side-menu__icon"></span><img src="https://maticforce.space/Home-Dashboard/Content/assets/img/m4.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Team"></a></li>
                                 <li class="media2"><a href="https://maticforce.space/Media"><span class="side-menu__icon"></span><img src="https://maticforce.space/Home-Dashboard/Content/assets/img/m5.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Media"></a></li>
@@ -128,16 +128,20 @@
             <!-- App-content opened -->
             <!-- App-content closed -->
         </div>
+        
+        
         <script> 
         var myContractInstance;
-var account = localStorage.getItem("address");
 var abi = [{"constant":false,"inputs":[],"name":"buyPool1","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool5currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool5users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool3userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool1userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool8userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool1activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool1users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool4","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool5activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool9currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool4userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool2activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool7","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool9userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool1currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool4activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool9users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool2","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool7currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool10currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool6users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool8","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"getEthBalance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool3users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"LEVEL_PRICE","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"unlimited_level_price","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool2userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool8activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool4users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool6userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"requests","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"referrerID","type":"uint256"},{"internalType":"uint256","name":"referredUsers","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool2users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool8currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool7users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool9activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"uint256","name":"_referrerID","type":"uint256"}],"name":"regUser","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"ownerWallet","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool7activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool10activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool4currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool8users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool9","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"referrerID","type":"uint256"},{"internalType":"uint256","name":"referredUsers","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool6","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool2currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool3","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool3currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool5userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool7userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool10userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool3activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool10","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool6currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool10users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool5","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool6activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_referrer","type":"address"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"regLevelEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_referral","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"getMoneyForLevelEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"regPoolEntry","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_receiver","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"getPoolPayment","type":"event"}];
 var address = "0x243AF0B6ce6F76E00E634D955218bA2dab27d1bE";
-function loaddata(poolno) {
+
+$(document).ready(function () {
     if (typeof web3 !== 'undefined') {
-        console.log('Web3 Detected! ' + web3.currentProvider.constructor.name)
-        window.web3 = new Web3(web3.currentProvider);
-      
+
+        web3 = new Web3(web3.currentProvider);
+        MyContract = new web3.eth.Contract(abi, address);
+        myContractInstance = MyContract;
+
         if (web3.currentProvider.isTrust) {
 
             const infura = 'https://polygon-mainnet.infura.io/v3/c2b1f9ce72254350a04f5759c898c8b3';
@@ -146,154 +150,202 @@ function loaddata(poolno) {
             myContractInstance = MyContract;
 
         }
-        else {
-            MyContract = new web3.eth.Contract(abi, address);
-            myContractInstance = MyContract;
-        }
-       
 
     } else {
-      //  const Web3 = require('web3');
 
         const infura = 'https://polygon-mainnet.infura.io/v3/c2b1f9ce72254350a04f5759c898c8b3';
         const web3 = new Web3(new Web3.providers.HttpProvider(infura));
         MyContract = new web3.eth.Contract(abi, address);
         myContractInstance = MyContract;
 
-
     }
-   
 
 
 
-
-    var events = myContractInstance.getPastEvents('regPoolEntry', {filter:{ _level: poolno }, 'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
-        if (!error) {
-            $.each(log, function (key, value) {
-                if (value.returnValues._level == poolno) {
-                    $('.pooldetailspagetable tbody').append('<tr class="' + value.returnValues._user + '"><td>' + poolno + '</td><td>' + value.returnValues._user + '</td><td></td><td></td><td></td></tr>');
-                    if (poolno == 1) {
-                        myContractInstance.methods.pool1users(value.returnValues._user).call().then(function (result1) {
-                          
-                                $('.' + value.returnValues._user + ' td:nth-child(3)').html(result1.id);
-                                $('.' + value.returnValues._user + ' td:nth-child(4)').html(result1.payment_received);
-                                myContractInstance.methods.pool1users(account).call().then(function (result2) {
-                                    $('.usersequence').html(result2.id);
-                                })
-                                myContractInstance.methods.pool1activeUserID().call().then(function (result3) {
-                                $('.currentsequence').html(result3);
-                                })
-                           
-                        });
-                    }
-                    else if (poolno == 2) {
-                        myContractInstance.methods.pool2users(value.returnValues._user).call().then(function (result1) {
-                          
-                                $('.' + value.returnValues._user + ' td:nth-child(3)').html(result1.id);
-                                $('.' + value.returnValues._user + ' td:nth-child(4)').html(result1.payment_received);
-                          
-                        });
-                    }
-                    else if (poolno == 3) {
-                        myContractInstance.methods.pool3users(value.returnValues._user).call().then(function (result1) {
-                          
-                                $('.' + value.returnValues._user + ' td:nth-child(3)').html(result1.id);
-                                $('.' + value.returnValues._user + ' td:nth-child(4)').html(result1.payment_received);
-                          
-                        });
-                    }
-                    else if (poolno == 4) {
-                        myContractInstance.methods.pool4users(value.returnValues._user).call().then(function (result1) {
-                           
-                                $('.' + value.returnValues._user + ' td:nth-child(3)').html(result1.id);
-                                $('.' + value.returnValues._user + ' td:nth-child(4)').html(result1.payment_received);
-                           
-                        });
-                    }
-                    else if (poolno == 5) {
-                        myContractInstance.methods.pool5users(value.returnValues._user).call().then(function (result1) {
-                            
-                                $('.' + value.returnValues._user + ' td:nth-child(3)').html(result1.id);
-                                $('.' + value.returnValues._user + ' td:nth-child(4)').html(result1.payment_received);
-                           
-                        });
-                    }
-                    else if (poolno == 6) {
-                        myContractInstance.methods.pool6users(value.returnValues._user).call().then(function (result1) {
-                          
-                                $('.' + value.returnValues._user + ' td:nth-child(3)').html(result1.id);
-                                $('.' + value.returnValues._user + ' td:nth-child(4)').html(result1.payment_received);
-                          
-                        });
-                    }
-                    else if (poolno == 7) {
-                        myContractInstance.methods.pool7users(value.returnValues._user).call().then(function (result1) {
-                           
-                                $('.' + value.returnValues._user + ' td:nth-child(3)').html(result1.id);
-                                $('.' + value.returnValues._user + ' td:nth-child(4)').html(result1.payment_received);
-                           
-                        });
-                    }
-                    else if (poolno == 8) {
-                        myContractInstance.methods.pool8users(value.returnValues._user).call().then(function (result1) {
-                           
-                                $('.' + value.returnValues._user + ' td:nth-child(3)').html(result1.id);
-                                $('.' + value.returnValues._user + ' td:nth-child(4)').html(result1.payment_received);
-                          
-                        });
-                    }
-                    else if (poolno == 9) {
-                        myContractInstance.methods.pool9users(value.returnValues._user).call().then(function (result1) {
-                         
-                                $('.' + value.returnValues._user + ' td:nth-child(3)').html(result1.id);
-                                $('.' + value.returnValues._user + ' td:nth-child(4)').html(result1.payment_received);
-                          
-                        });
-                    }
-                    else if (poolno == 10) {
-                        myContractInstance.methods.pool10users(value.returnValues._user).call().then(function (result1) {
-                          
-                                $('.' + value.returnValues._user + ' td:nth-child(3)').html(result1.id);
-                                $('.' + value.returnValues._user + ' td:nth-child(4)').html(result1.payment_received);
-                          
-                        });
-                    }
-                    myContractInstance.methods.users(value.returnValues._user).call().then(function (result1) {
-                        
-                        $('.' + value.returnValues._user + ' td:nth-child(5)').html(result1.id);
-                        
-                    });
-                }
-            });
-        }
-
+    // get variable values
+    myContractInstance.methods.pool1currUserID().call().then(function (result) {
+        $('.Pool1count').html(result);
     });
-}
-</script>
 
-<script>
-    $(document).ready(function () {
-        loaddata(1);
+    myContractInstance.methods.pool2currUserID().call().then(function (result) {
+        $('.Pool2count').html(result);
     });
-</script>
 
-<!-- App-content opened -->
-<div class="app-content">
+    myContractInstance.methods.pool3currUserID().call().then(function (result) {
+        $('.Pool3count').html(result);
+    });
+
+    myContractInstance.methods.pool4currUserID().call().then(function (result) {
+        $('.Pool4count').html(result);
+    });
+
+
+
+    myContractInstance.methods.pool5currUserID().call().then(function (result) {
+        $('.Pool5count').html(result);
+    });
+
+    myContractInstance.methods.pool6currUserID().call().then(function (result) {
+
+        $('.Pool6count').html(result);
+        $('.pool6_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool7currUserID().call().then(function (result) {
+
+        $('.Pool7count').html(result);
+        $('.pool7_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool8currUserID().call().then(function (result) {
+
+        $('.Pool8count').html(result);
+        $('.pool8_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool9currUserID().call().then(function (result) {
+
+        $('.Pool9count').html(result);
+        $('.pool9_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool10currUserID().call().then(function (result) {
+
+        $('.Pool10count').html(result);
+        $('.pool10_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+
+
+
+
+
+
+
+
+    myContractInstance.methods.pool1activeUserID().call().then(function (result) {
+        myContractInstance.methods.pool1userList(result).call().then(function (result1) {
+            $('.pool1_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
+        });
+    });
+
+    myContractInstance.methods.pool2activeUserID().call().then(function (result) {
+        myContractInstance.methods.pool2userList(result).call().then(function (result1) {
+            $('.pool2_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
+        });
+    });
+
+    myContractInstance.methods.pool3activeUserID().call().then(function (result) {
+        myContractInstance.methods.pool3userList(result).call().then(function (result1) {
+            $('.pool3_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
+        });
+    });
+
+    myContractInstance.methods.pool4activeUserID().call().then(function (result) {
+        myContractInstance.methods.pool4userList(result).call().then(function (result1) {
+            $('.pool4_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
+        });
+    });
+
+
+
+    myContractInstance.methods.pool5activeUserID().call().then(function (result) {
+        myContractInstance.methods.pool5userList(result).call().then(function (result1) {
+            $('.pool5_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
+        });
+    });
+
+    myContractInstance.methods.pool6activeUserID().call().then(function (result) {
+        myContractInstance.methods.pool6userList(result).call().then(function (result1) {
+            $('.pool6_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
+        });
+    });
+
+    myContractInstance.methods.pool7activeUserID().call().then(function (result) {
+        myContractInstance.methods.pool7userList(result).call().then(function (result1) {
+            $('.pool7_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
+        });
+    });
+
+    myContractInstance.methods.pool8activeUserID().call().then(function (result) {
+        myContractInstance.methods.pool8userList(result).call().then(function (result1) {
+            $('.pool8_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
+        });
+    });
+
+    myContractInstance.methods.pool9activeUserID().call().then(function (result) {
+        myContractInstance.methods.pool9userList(result).call().then(function (result1) {
+            $('.pool9_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
+        });
+    });
+
+    myContractInstance.methods.pool10activeUserID().call().then(function (result) {
+        myContractInstance.methods.pool10userList(result).call().then(function (result1) {
+            $('.pool10_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
+        });
+    });
+    myContractInstance.methods.users(account).call().then(function (result1) {
+        
+            $('.currentuseridlink').html("https://maticforce.space/register?referralid=" + result1.id);
+
+
+
+
+            $('.currentuseridlink').val("https://maticforce.space/register?referralid=" + result1.id);
+
+
+
+
+            $('.sharebutton').attr('data-url', "https://maticforce.space/register?referralid=" + result1.id);
+            $('.currentuserid').html(result1.id);
+            $('.currentaddress').html(account);
+            $('.ethaddress').attr('href', 'https://polygonscan.com/address/' + account);
+        
+    });
+
+  
+
+});
+            
+            
+        </script>
+       
+        <div class="app-content">
     <div class="section">
-        <div class="col-xl-12 col-lg-12 col-md-12">
-            <span>Your Sequence = </span>
-            <span class = "usersequence"> </span><br>
-            <span>Current Sequence = </span>
-            <span class = "currentsequence"> </span>
+
+        <!-- Banner opened -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="banner banner-color mt-0">
+                    <div class="col-xl-2 col-lg-3 col-md-12">
+<img src="https://maticforce.space/Home-Dashboard/Content/assets/images/svg/new_message.svg" alt="image" class="image"></div> 
+                   <div class="page-content col-xl-7 col-lg-6 col-md-12">
+                        <h3 class="mb-1">User ID : <span class="currentuserid"></span></h3>
+
+                        <input class="currentuseridlink" type="text" id="myInput" style="opacity:0; height:0px;" />
+                        <input class="currentuseridlinknew" type="text" id="myInput1" style="opacity:0; height:0px;"/>
+
+                      <p class="mb-0 fs-16">Your Referral link : <span class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
+
+
+
+                        <p class="mb-0 fs-16"><a class="ethaddress" href="" target="_blank"> <span class="currentaddress"></span> <i class="fa fa fa-external-link"></i></a></p>
+                    </div>
+                   </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 text-right d-flex d-block">
+                        
         </div>
+<!-- Banner opened -->
+        <!-- row opened -->
+                <div style="text-align: center;"><a href="https://telegram.me/MaticForce_Space" target="_blank"><img border="0" data-original-height="86" data-original-width="200" height="64" src="https://maticforce.space/Join-Telegram-Channel.png" width="200" /></a></div>
 
-
+         <!-- Banner opened -->
         <!-- row opened -->
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="card mb-0">
                     <div class="card-header">
-                        <h3 class="card-title">Smart Matrix 1</h3>
+                        <h3 class="card-title">Smart Matrix</h3>
                         <div class="card-options ">
                             <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
                             <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
@@ -301,25 +353,124 @@ function loaddata(poolno) {
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="pooldetailspagetable">
+                        <div class="">
                             <div class="table-responsive">
                                 <table class="table card-table table-striped text-nowrap table-bordered">
                                     <thead class="border-top">
                                         <tr>
-                                            <th>Smart Matrix No </th>
+                                            <th>Smart Matrix </th>
 
 
-                                            <th>Matic Address</th>
-
-                                            <th>Smart Matrix No 
-                                            <span type="button" class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pool Sequence number : It's a serial number of autopool generates while user enter at Autopool and TX Timestamp recorded on Ethereum Blockchain."><i class="fa fa-info-circle" ></i></span> </th>
-                                            <th>Payment Received </th>
-                                            <th>User id</th>
+                                            <th>Total Users</th>
+                                            <th>Entry Fees</th>
+                                            <th>Users X MATIC = Profit</th>
+                                            <th>Current User Address</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       
-                                     
+                                        <tr>
+                                            <td><img src="https://maticforce.space/Smart/1.png" class="w-6" alt=""></td>
+                                            <td><span class="Pool1count"></span><br>
+                                            </td>
+                                            <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 10 MATIC </td>
+                                            <td>
+                                            <span class="badge  badge-info"> 8 X 10 </span> = <span class="badge  badge-success"> 80 MATIC </span><br>
+                                                <br>
+                                                <br>
+                                            </td>
+                                            <td><span class="pool1_current_address"></span></td>
+                                            <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
+
+
+                                        </tr>
+                                        <tr>
+                                            <td><img src="https://maticforce.space/Smart/2.png" class="w-6" alt=""></td>
+                                            <td><span class="Pool2count"></span></td>
+                                            <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 50 MATIC </td>
+                                            <td>
+                                            <span class="badge  badge-info"> 8 X 50 </span> = <span class="badge  badge-success"> 400 MATIC </span><br>
+                                                <br>
+                                                <br>
+                                            </td>
+                                            <td><span class="pool2_current_address"></span></td>
+                                            <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="https://maticforce.space/Smart/3.png" class="w-6" alt=""></td>
+                                            <td><span class="Pool3count"></span></td>
+                                            <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 100 MATIC </td>
+                                            <td>
+                                            <span class="badge  badge-info"> 8 X 100 </span> = <span class="badge  badge-success"> 800 MATIC </span><br>
+                                                <br>
+                                                <br>
+                                            </td>
+                                            <td><span class="pool3_current_address"></span></td>
+                                            <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="https://maticforce.space/Smart/4.png" class="w-6" alt=""></td>
+                                            <td><span class="Pool4count"></span></td>
+                                            <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 500 MATIC </td>
+                                            <td>
+                                            <span class="badge  badge-info"> 8 X 500 </span> = <span class="badge  badge-success"> 4000 MATIC </span><br>
+                                                <br>
+                                                <br>
+                                            </td>
+                                            <td><span class="pool4_current_address"></span></td>
+                                            <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="https://maticforce.space/Smart/5.png" class="w-6" alt=""></td>
+                                            <td><span class="Pool5count"></span></td>
+                                            <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 1000 MATIC </td>
+                                            <td>
+                                            <span class="badge  badge-info"> 8 X 1000 </span> = <span class="badge  badge-success"> 8000 MATIC </span><br>
+                                                <br>
+                                                <br>
+                                            </td>
+                                            <td><span class="pool5_current_address"></span></td>
+                                            <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><img src="https://maticforce.space/Smart/6.png" class="w-6" alt=""></td>
+                                            <td><span class="Pool6count"></span></td>
+                                            <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 5000 MATIC </td>
+                                            <td>
+                                            <span class="badge  badge-info"> 8 X 5000 </span> = <span class="badge  badge-success"> 40000 MATIC </span><br>
+                                                <br>
+                                                <br>
+                                            </td>
+                                            <td><span class="pool6_current_address"></span></td>
+                                            <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="https://maticforce.space/Smart/7.png" class="w-6" alt=""></td>
+                                            <td><span class="Pool7count"></span></td>
+                                            <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 10000 MATIC </td>
+                                            <td>
+                                            <span class="badge  badge-info"> 8 X 10000 </span> = <span class="badge  badge-success"> 80000 MATIC </span><br>
+                                                <br>
+                                                <br>
+                                            </td>
+                                            <td><span class="pool7_current_address"></span></td>
+                                            <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="https://maticforce.space/Smart/8.png" class="w-6" alt=""></td>
+                                            <td><span class="Pool8count"></span></td>
+                                            <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 50000 MATIC </td>
+                                            <td>
+                                            <span class="badge  badge-info"> 8 X 50000 </span> = <span class="badge  badge-success"> 400000 MATIC </span><br>
+                                                <br>
+                                                <br>
+                                            </td>
+
+                                            <td><span class="pool8_current_address"></span></td>
+                                            <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
+                                        </tr>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -336,23 +487,22 @@ function loaddata(poolno) {
     td, .badge {
         font-size: 15px;
         font-weight: 500;
-        text-align: center
+        text-align:center
     }
-
-    th {
-        text-align: center
-    }
+    th{text-align:center}
+    
 </style>
 <script>
     $(document).ready(function () {
-
+        
         $(".resp-tabs-list li").removeClass('resp-tab-active active');
         $(".resp-tabs-list li.autopool").addClass('resp-tab-active active')
-
+      
     })
 </script>
 
-<!-- Footer opened -->
+
+ <!-- Footer opened -->
         <footer class="footer-main leftmenu-footer">
             <div class="container">
                 <div class="row">
@@ -363,7 +513,8 @@ function loaddata(poolno) {
                         </a>
                     </div>
                     <div class="col-md-6  mt-2 mb-2 text-center">
-                        Copyright © 2023 <a href="#" class="fs-14 text-primary">https://maticforce.space</a>
+                        Copyright © 2023 <a href="https://maticforce.space" class="fs-14 text-primary">https://maticforce.space</a>
+                   
                     </div>
                 </div>
             </div>
@@ -371,8 +522,9 @@ function loaddata(poolno) {
         <!-- Footer closed -->
     </div>
 
-     <!-- Back-to-top -->
+    <!-- Back-to-top -->
     <a href="#top" id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
     <!-- Jquery-scripts -->
     <script src="https://maticforce.space/Home-Dashboard/Content/assets/js/vendors/jquery-3.2.1.min.js"></script>
 
