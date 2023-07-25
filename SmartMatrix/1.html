@@ -169,10 +169,7 @@ $(document).ready(function () {
 
     
     myContractInstance.methods.pool1activeUserID().call().then(function (result) {
-        $('.Pool1active').html(result);
-    });
-    
-   myContractInstance.methods.pool1userList(result).call().then(function (result1) {
+  myContractInstance.methods.pool1userList(result).call().then(function (result1) {
             $('.pool1_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
         });
     });
