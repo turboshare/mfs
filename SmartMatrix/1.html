@@ -167,123 +167,14 @@ $(document).ready(function () {
         $('.Pool1count').html(result);
     });
 
-    myContractInstance.methods.pool2currUserID().call().then(function (result) {
-        $('.Pool2count').html(result);
-    });
-
-    myContractInstance.methods.pool3currUserID().call().then(function (result) {
-        $('.Pool3count').html(result);
-    });
-
-    myContractInstance.methods.pool4currUserID().call().then(function (result) {
-        $('.Pool4count').html(result);
-    });
-
-
-
-    myContractInstance.methods.pool5currUserID().call().then(function (result) {
-        $('.Pool5count').html(result);
-    });
-
-    myContractInstance.methods.pool6currUserID().call().then(function (result) {
-
-        $('.Pool6count').html(result);
-        $('.pool6_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
-    });
-
-    myContractInstance.methods.pool7currUserID().call().then(function (result) {
-
-        $('.Pool7count').html(result);
-        $('.pool7_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
-    });
-
-    myContractInstance.methods.pool8currUserID().call().then(function (result) {
-
-        $('.Pool8count').html(result);
-        $('.pool8_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
-    });
-
-    myContractInstance.methods.pool9currUserID().call().then(function (result) {
-
-        $('.Pool9count').html(result);
-        $('.pool9_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
-    });
-
-    myContractInstance.methods.pool10currUserID().call().then(function (result) {
-
-        $('.Pool10count').html(result);
-        $('.pool10_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
-    });
-
-
-
-
-
-
-
-
-
+    
     myContractInstance.methods.pool1activeUserID().call().then(function (result) {
         myContractInstance.methods.pool1userList(result).call().then(function (result1) {
             $('.pool1_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
         });
     });
 
-    myContractInstance.methods.pool2activeUserID().call().then(function (result) {
-        myContractInstance.methods.pool2userList(result).call().then(function (result1) {
-            $('.pool2_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
-        });
-    });
-
-    myContractInstance.methods.pool3activeUserID().call().then(function (result) {
-        myContractInstance.methods.pool3userList(result).call().then(function (result1) {
-            $('.pool3_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
-        });
-    });
-
-    myContractInstance.methods.pool4activeUserID().call().then(function (result) {
-        myContractInstance.methods.pool4userList(result).call().then(function (result1) {
-            $('.pool4_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
-        });
-    });
-
-
-
-    myContractInstance.methods.pool5activeUserID().call().then(function (result) {
-        myContractInstance.methods.pool5userList(result).call().then(function (result1) {
-            $('.pool5_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
-        });
-    });
-
-    myContractInstance.methods.pool6activeUserID().call().then(function (result) {
-        myContractInstance.methods.pool6userList(result).call().then(function (result1) {
-            $('.pool6_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
-        });
-    });
-
-    myContractInstance.methods.pool7activeUserID().call().then(function (result) {
-        myContractInstance.methods.pool7userList(result).call().then(function (result1) {
-            $('.pool7_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
-        });
-    });
-
-    myContractInstance.methods.pool8activeUserID().call().then(function (result) {
-        myContractInstance.methods.pool8userList(result).call().then(function (result1) {
-            $('.pool8_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
-        });
-    });
-
-    myContractInstance.methods.pool9activeUserID().call().then(function (result) {
-        myContractInstance.methods.pool9userList(result).call().then(function (result1) {
-            $('.pool9_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
-        });
-    });
-
-    myContractInstance.methods.pool10activeUserID().call().then(function (result) {
-        myContractInstance.methods.pool10userList(result).call().then(function (result1) {
-            $('.pool10_current_address').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
-        });
-    });
+    
     myContractInstance.methods.users(account).call().then(function (result1) {
         
             $('.currentuseridlink').html("https://maticforce.space/register?referralid=" + result1.id);
@@ -359,9 +250,7 @@ $(document).ready(function () {
                                     <thead class="border-top">
                                         <tr>
                                             <th>Smart Matrix </th>
-
-
-                                            <th>Total Users</th>
+                                             <th>Total Users</th>
                                             <th>Entry Fees</th>
                                             <th>Users X MATIC = Profit</th>
                                             <th>Current User Address</th>
@@ -381,94 +270,7 @@ $(document).ready(function () {
                                             </td>
                                             <td><span class="pool1_current_address"></span></td>
                                             <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
-
-
                                         </tr>
-                                        <tr>
-                                            <td><img src="https://maticforce.space/Smart/2.png" class="w-6" alt=""></td>
-                                            <td><span class="Pool2count"></span></td>
-                                            <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 50 MATIC </td>
-                                            <td>
-                                            <span class="badge  badge-info"> 8 X 50 </span> = <span class="badge  badge-success"> 400 MATIC </span><br>
-                                                <br>
-                                                <br>
-                                            </td>
-                                            <td><span class="pool2_current_address"></span></td>
-                                            <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="https://maticforce.space/Smart/3.png" class="w-6" alt=""></td>
-                                            <td><span class="Pool3count"></span></td>
-                                            <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 100 MATIC </td>
-                                            <td>
-                                            <span class="badge  badge-info"> 8 X 100 </span> = <span class="badge  badge-success"> 800 MATIC </span><br>
-                                                <br>
-                                                <br>
-                                            </td>
-                                            <td><span class="pool3_current_address"></span></td>
-                                            <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="https://maticforce.space/Smart/4.png" class="w-6" alt=""></td>
-                                            <td><span class="Pool4count"></span></td>
-                                            <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 500 MATIC </td>
-                                            <td>
-                                            <span class="badge  badge-info"> 8 X 500 </span> = <span class="badge  badge-success"> 4000 MATIC </span><br>
-                                                <br>
-                                                <br>
-                                            </td>
-                                            <td><span class="pool4_current_address"></span></td>
-                                            <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="https://maticforce.space/Smart/5.png" class="w-6" alt=""></td>
-                                            <td><span class="Pool5count"></span></td>
-                                            <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 1000 MATIC </td>
-                                            <td>
-                                            <span class="badge  badge-info"> 8 X 1000 </span> = <span class="badge  badge-success"> 8000 MATIC </span><br>
-                                                <br>
-                                                <br>
-                                            </td>
-                                            <td><span class="pool5_current_address"></span></td>
-                                            <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="https://maticforce.space/Smart/6.png" class="w-6" alt=""></td>
-                                            <td><span class="Pool6count"></span></td>
-                                            <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 5000 MATIC </td>
-                                            <td>
-                                            <span class="badge  badge-info"> 8 X 5000 </span> = <span class="badge  badge-success"> 40000 MATIC </span><br>
-                                                <br>
-                                                <br>
-                                            </td>
-                                            <td><span class="pool6_current_address"></span></td>
-                                            <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="https://maticforce.space/Smart/7.png" class="w-6" alt=""></td>
-                                            <td><span class="Pool7count"></span></td>
-                                            <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 10000 MATIC </td>
-                                            <td>
-                                            <span class="badge  badge-info"> 8 X 10000 </span> = <span class="badge  badge-success"> 80000 MATIC </span><br>
-                                                <br>
-                                                <br>
-                                            </td>
-                                            <td><span class="pool7_current_address"></span></td>
-                                            <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="https://maticforce.space/Smart/8.png" class="w-6" alt=""></td>
-                                            <td><span class="Pool8count"></span></td>
-                                            <td><img src="https://maticforce.space/Home-Dashboard/Content/assets/images/crypto-currencies/square-color/Ethereum.svg" class="w-5" alt=""> 50000 MATIC </td>
-                                            <td>
-                                            <span class="badge  badge-info"> 8 X 50000 </span> = <span class="badge  badge-success"> 400000 MATIC </span><br>
-                                                <br>
-                                                <br>
-                                            </td>
-
-                                            <td><span class="pool8_current_address"></span></td>
-                                            <td><a href="https://maticforce.space/SmartMatrix">View in details</a></td>
                                         </tr>
                                         </tr>
                                     </tbody>
