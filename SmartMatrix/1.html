@@ -174,7 +174,13 @@ $(document).ready(function () {
         });
     });
 
-    
+            myContractInstance.methods.pool1userList(result).call().then(function (result) {
+    myContractInstance.methods.pool1activeUserID().call().then(function (result1) {
+         $('.pool1active').html("<a href=https://polygonscan.com/address/" + result1 + " target=_blank>" + result1 + "</a>");
+        });
+    });
+
+
     myContractInstance.methods.users(account).call().then(function (result1) {
         
             $('.currentuseridlink').html("https://maticforce.space/register?referralid=" + result1.id);
