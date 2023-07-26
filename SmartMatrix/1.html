@@ -199,72 +199,7 @@ $(document).ready(function () {
 });
             }
 </script>
-        <script>
-
-                   
-            
-            getVariableData();
-
-            checkbuyLevel();
-        // document.getElementById('output').innerHtml = 'Please download and install Metamask: <a href="https://metamask.io/">https://metamask.io/</a>'
-    }
-
-
-})
-
-
-function checkbuyLevel() {
-
-    myContractInstance.methods.users(account).call().then(function (result) {
-     
-       
-            if (result[0]) {
-                checkPool1();
-                
-            }
-       
-
-    });
-
-}
-
-function checkPool1() {
-
-
-
-    myContractInstance.methods.pool1users(account).call().then(function (result) {
-        if(result[1] > 0){
-        $('#pool1sequencue').text(result[1])
-        $('#pool1sequencue').show();
-        $('.pool1sequencue').show();}
-       
-            if (!result[0]) {
-                $('.pool1pay').show();
-                $('.pool1transaction').hide();
-            }
-            else if (result[2] == 8) {
-                $('.pool1status').show();
-                $('.pool1status .card-status').addClass('bg-success');
-                $('.pool1status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
-                $('.pool1transaction').html('Received No. of Payments ' + result[2]);
-
-
-            }
-            else if (result[2]< 8) {
-                $('.pool1status').show();
-                $('.pool1status .card-status').addClass('bg-warning');
-                $('.pool1status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
-                $('.pool1transaction').html('Received No. of Payments ' + result[2]);
-                $('.currentautopoolno').html(1);
-            }
-
-
-       
-
-    });
-
-}        
-        </script>
+        
        
         <div class="app-content">
     <div class="section">
