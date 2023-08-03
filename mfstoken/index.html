@@ -22,16 +22,16 @@
                         <div class="ui container center aligned">
                             <div class="ui stackable relaxed grid center aligned">
                                 <div class="ui eight wide column announcement-box center aligned">
-                                    <h1>Your Referral link:</h1><div id="quoteDisplay"></div><button onclick="CopyToClipboard('quoteDisplay')" class="ui button large primary">Copy Referral link</button>
+                                    <h2>Your Referral link:</h2><div id="quoteDisplay"></div><button onclick="CopyToClipboard('quoteDisplay')" class="ui button large primary">Copy Referral link</button>
 
                                     <script>
                                         function whenAvailable(name, callback) {
                                             var interval = 10;
-                                            wMFSow.setTimeout(function () {
-                                                if (wMFSow[name]) {
-                                                    callback(wMFSow[name]);
+                                            window.setTimeout(function () {
+                                                if (window[name]) {
+                                                    callback(window[name]);
                                                 } else {
-                                                    wMFSow.setTimeout(arguments.callee, interval);
+                                                    window.setTimeout(arguments.callee, interval);
                                                 }
                                             }, interval);
                                         }
@@ -47,15 +47,16 @@
                                                 range.moveToElementText(document.getElementById(containerid));
                                                 range.select().createTextRange();
                                                 document.execCommand("copy");
-                                            } else if (wMFSow.getSelection) {
+                                            } else if (window.getSelection) {
                                                 var range = document.createRange();
                                                 range.selectNode(document.getElementById(containerid));
-                                                wMFSow.getSelection().addRange(range);
+                                                window.getSelection().addRange(range);
                                                 document.execCommand("copy");
                                                 //alert("text copied") 
                                             }
                                         }
                                     </script>
+
                                     <div><b>Note that your Referral link does not become active until you have 1.1 Tokens.</b>
 				    <br>
 				    <b>Contract Address :</b> <a href="https://polygonscan.com/address/0x4c1987236be20416427a012686e6f5e024dc15fe" target="_blank">0x4c1987236be20416427a012686e6f5e024dc15fe</a><br>
