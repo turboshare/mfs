@@ -655,7 +655,7 @@ function updateData () {
 
     contract.balanceOf(currentAddress, function (e, r) {
       const tokenAmount = (r / 1e18 * 0.9999)
-      $('.poh-balance').text(Number(tokenAmount.toFixed(2)).toLocaleString() + ' Tokens')
+      $('.poh-balance').text(Number(tokenAmount.toFixed(2)).toLocaleString() + ' MFS')
       contract.calculateEthereumReceived(r, function (e, r) {
         let bal = convertWeiToEth(r)
         $('.poh-value').text(bal.toFixed(4) + ' MATIC')
