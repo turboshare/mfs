@@ -96,6 +96,7 @@
                             <a class="header-brand" href="/Home-Dashboard/">
                                 <h3 style="margin-top: 16px;color: #141670;">Dashboard</h3>
                             </a>
+                          <div id="google_translate_element"></div>
                             <a href="#" data-toggle="sidebar" class="nav-link icon toggle"><i class="fa fa-align-justify fs-20"></i></a>
                         </div>
                     </div>
@@ -1631,7 +1632,16 @@ $(document).ready(function () {
 
     <!-- Back-to-top -->
     <a href="#top" id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
+<script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                    pageLanguage: 'en'
+                },
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
    <!-- Jquery-scripts -->
    <script src="https://1dapp.github.io/Home-Dashboard/Content/assets/js/vendors/jquery-3.2.1.min.js"></script>
 
