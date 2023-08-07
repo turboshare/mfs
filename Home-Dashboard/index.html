@@ -259,20 +259,20 @@ function getReferralCommission() {
                 var level = value.returnValues._level;
 
                 if (level == 1) {
-                    referraltotal = parseFloat(referraltotal) + parseFloat("0.01");
+                    referraltotal = parseFloat(referraltotal) + parseFloat("5");
 
                 }
                 else if (level == 2) {
 
-                    referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
+                    referraltotal = parseFloat(referraltotal) + parseFloat("1");
                 }
                 else if (level == 3) {
-                    referraltotal = parseFloat(referraltotal) + parseFloat("0.0025");
+                    referraltotal = parseFloat(referraltotal) + parseFloat("1");
 
                 }
                 else {
 
-                    referraltotal = parseFloat(referraltotal) + parseFloat("0.00025");
+                    referraltotal = parseFloat(referraltotal) + parseFloat("1");
 
                 }
 
@@ -1290,7 +1290,7 @@ $(document).ready(function () {
                         <div class="d-flex">
                             <div class="">
                                 <p class="mb-2 h6">Referral Earning</p>
-                                <h2 class="mb-1 "><span class="totalreferral"></span></h2>                          
+                                <h2 class="mb-1 "><span class="totalreferral">0.00</span></h2>                          
                             </div>
                             <div class=" my-auto ml-auto">
                                 <div class="chart-wrapper text-center">
@@ -1310,7 +1310,7 @@ $(document).ready(function () {
                         <div class="d-flex">
                             <div class="">
                                 <p class="mb-2 h6">Smart Matrix Earning</p>
-                                <h2 class="mb-1 "><span class="totalpoolpayment"></span></h2>
+                                <h2 class="mb-1 "><span class="totalpoolpayment">0.00</span></h2>
                             </div>
                             <div class=" my-auto ml-auto">
                                 <div class="chart-wrapper text-center">
@@ -1333,7 +1333,7 @@ $(document).ready(function () {
                         <div class="d-flex">
                             <div class="">
                                 <p class="mb-2 h6">Direct Team</p>
-                                <h2 class="mb-1 "><span class="referralcount"></span></h2>
+                                <h2 class="mb-1 "><span class="referralcount">00</span></h2>
                             </div>
                             <div class=" my-auto ml-auto">
                                 <div class="chart-wrapper text-center">
@@ -1352,7 +1352,7 @@ $(document).ready(function () {
                         <div class="d-flex">
                             <div class="">
                                 <p class="mb-2 h6">Indirect Team</p>
-                                <h2 class="mb-1 "><span class="indirect_referralcount"></span></h2>
+                                <h2 class="mb-1 "><span class="indirect_referralcount">00</span></h2>
                             </div>
 
                             <div class=" my-auto ml-auto">
