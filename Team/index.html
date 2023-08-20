@@ -249,7 +249,7 @@ function getVariableData() {
 function getReferralCommission() {
     
 
-    var level1 = parseFloat(0.0075); var level2 = parseFloat(0.005); var level3 = parseFloat(0.0025); var level4 = parseFloat(0.000005);
+    var level1 = parseFloat(5); var level2 = parseFloat(1); var level3 = parseFloat(1); var level4 = parseFloat(1); var level5 = parseFloat(1); var level6 = parseFloat(0.20);
 
     var referraltotal = parseFloat(0);
 
@@ -260,20 +260,32 @@ function getReferralCommission() {
                 var level = value.returnValues._level;
 
                 if (level == 1) {
-                    referraltotal = parseFloat(referraltotal) + parseFloat("0.01");
+                    referraltotal = parseFloat(referraltotal) + parseFloat("5");
 
                 }
                 else if (level == 2) {
 
-                    referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
+                    referraltotal = parseFloat(referraltotal) + parseFloat("1");
                 }
                 else if (level == 3) {
-                    referraltotal = parseFloat(referraltotal) + parseFloat("0.0025");
+                    referraltotal = parseFloat(referraltotal) + parseFloat("1");
+
+                }
+                    else if (level == 4) {
+                    referraltotal = parseFloat(referraltotal) + parseFloat("1");
+
+                }
+                        else if (level == 5) {
+                    referraltotal = parseFloat(referraltotal) + parseFloat("1");
+
+                }
+                            else if (level == 6) {
+                    referraltotal = parseFloat(referraltotal) + parseFloat("0.20");
 
                 }
                 else {
 
-                    referraltotal = parseFloat(referraltotal) + parseFloat("0.00025");
+                    referraltotal = parseFloat(referraltotal) + parseFloat("0.20");
 
                 }
 
@@ -470,7 +482,7 @@ function InDirectreferralCount(address, level) {
 function Transaction_Register() {
     
     var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', {filter:{ _user: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
-        var level1 = parseFloat(5); var level2 = parseFloat(1); var level3 = parseFloat(1); var level4 = parseFloat(1);
+        var level1 = parseFloat(5); var level2 = parseFloat(1); var level3 = parseFloat(1); var level4 = parseFloat(1); var level4 = parseFloat(1); var level6 = parseFloat(0.20);
 
         if (!error) {
             $.each(log, function (key, value) {
@@ -1305,7 +1317,39 @@ $(document).ready(function () {
 
     </div>
 </div>
+<!-- row opened -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card overflow-hidden">
+                    <div class="card-header">
+                        <h3 class="card-title">Team</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="">
+                            <div class="panel panel-primary">
 
+                                <div class="panel-body tabs-menu-body">
+                                    <div class="panel-group1" id="accordion11">
+                                        <div class="">No data found</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row closed -->
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+
+        $(".resp-tabs-list li").removeClass('resp-tab-active active');
+        $(".resp-tabs-list li.team2").addClass('resp-tab-active active')
+
+    })
+</script>
 
 <style>
     .pool1pay, .pool2pay, .pool3pay, .pool4pay, .pool5pay, .pool6pay, .pool7pay, .pool8pay, .pool9pay, .pool10pay {
