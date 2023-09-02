@@ -1158,7 +1158,51 @@ $(document).ready(function () {
                             <div class="">
                                 <h5 class="mb-1 ">Super Matrix Booster</h5>
                       <h4 class="mb-1 ">50 MATIC</h4>
-                      <h6 class="mb-1 ">Coming Soon</h6>                                          
+                              <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: colour="black";
+  font-size: 20px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body>
+<p id="booster"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Sep 5, 2023 21:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="booster"
+  document.getElementById("booster").innerHTML = days + "D " + hours + "H "
+  + minutes + "M " + seconds + "S ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("booster").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+</body>
                             </div>
                             <div class=" my-auto ml-auto">
                                 <div class="chart-wrapper text-center">
@@ -1400,6 +1444,22 @@ $(document).ready(function () {
             </div>
             
         </div>
+        <!-- row closed -->
+
+              <!-- row opened -->
+        <div class="row">
+            <div class="col-xl-12 col-md-12 col-lg-12">
+                <div class="card bg-dark1">
+                    <div class="">
+                      <div class="d-flex">
+                      <div class="center">
+<a href="" target=""><img border="0" data-original-height="86" data-original-width="200" height="64" src="https://maticforce.space/images/Logo.png" width="200" /></a></div></center>
+                                            </div>
+                                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                               
         <!-- row closed -->
 
 <!-- row opened -->
