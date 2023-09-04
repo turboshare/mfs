@@ -257,7 +257,7 @@ function getReferralCommission() {
     var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', { filter: { _user: account }, 'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
         
         if (!error) {
-            $.each(log, function (key, value) {
+            $.Each(log, function (key, value) {
                 var level = value.returnValues._level;
 
                 if (level == 1) {
@@ -303,7 +303,7 @@ function getPoolPaymentReceived() {
     var events = myContractInstance.getPastEvents('getPoolPayment', {filter : { _receiver: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
 
         if (!error) {
-            $.each(log, function (key, value) {
+            $.Each(log, function (key, value) {
                 var level = value.returnValues._level;
 
                 if (level == 1) {
@@ -359,7 +359,7 @@ function Directreferral() {
 
         if (!error) {
 
-            $.each(log, function (key, value) {
+            $.Each(log, function (key, value) {
                 if (t == 1) {
                     t = 2;
                     $('#accordion11').html("");
@@ -398,7 +398,7 @@ function InDirectreferral(address, level) {
     var events = myContractInstance.getPastEvents('regLevelEvent', {filter:{ _referrer: address },  'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
 
         if (!error) {
-            $.each(log, function (key, value) {
+            $.Each(log, function (key, value) {
                 if (templevel != level) {
                     str += '';
                 }
@@ -435,7 +435,7 @@ function DirectreferralCount() {
     var events = myContractInstance.getPastEvents('regLevelEvent', {filter:{ _referrer: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
        
         if (!error) {
-            $.each(log, function (key, value) {
+            $.Each(log, function (key, value) {
                 $('.referralcount').html(i++);
 
                 InDirectreferralCount(value.returnValues._user, 1)
@@ -455,7 +455,7 @@ function InDirectreferralCount(address, level) {
     var events = myContractInstance.getPastEvents('regLevelEvent', {filter:{ _referrer: address },  'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
       
         if (!error) {
-            $.each(log, function (key, value) {
+            $.Each(log, function (key, value) {
                 $('.indirect_referralcount').html(count++);
                 InDirectreferralCount(value.returnValues._user, level + 1);
             });
@@ -474,7 +474,7 @@ function Transaction_Register() {
         var level1 = parseFloat(5); var level2 = parseFloat(1); var level3 = parseFloat(1); var level4 = parseFloat(1);
 
         if (!error) {
-            $.each(log, function (key, value) {
+            $.Each(log, function (key, value) {
                 
                 $('.autopool_table').append('<tr><td><a href="https://polygonscan.com/tx/' + value.transactionHash + '" target="_blank">' + value.transactionHash + '</a></td><td style=color:green>' + value.returnValues._referral + '</td><td>' + value.returnValues._level + '</td><td>' + (value.returnValues._level == 1 ? level1 : value.returnValues._level == 2 ? level2 : value.returnValues._level == 3 ? level3 : level4) + ' ETH</td></tr>');
             });
@@ -495,7 +495,7 @@ function Transaction_Pool() {
         var pool8_price = 50000;
        
         if (!error) {
-            $.each(log, function (key, value) {
+            $.Each(log, function (key, value) {
                 $('.transaction_autopool').append('<tr><td><a href="https://polygonscan.com/tx/' + value.transactionHash + '" target="_blank">' + value.transactionHash + '</a></td><td style=color:green>' + value.returnValues._user + '</td><td>' + value.returnValues._level + '</td><td>' + (value.returnValues._level == 1 ? pool1_price : value.returnValues._level == 2 ? pool2_price : value.returnValues._level == 3 ? pool3_price : value.returnValues._level == 4 ? pool4_price : value.returnValues._level == 5 ? pool5_price : value.returnValues._level == 6 ? pool6_price : value.returnValues._level == 7 ? pool7_price : value.returnValues._level == 8 ? pool8_price : value.returnValues._level == 9 ? pool9_price : pool10_price) + ' ETH</td></tr>');
             });
         }
@@ -1684,8 +1684,8 @@ var x = setInterval(function() {
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5"><span class="badge  badge-success">10 MATIC</span></h1>
-                        <p class="mb-5">Globally <strong></strong> people pays <br /> <strong>10</strong> MATIC each</p>
-                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5">Globally <strong></strong> People Pay <br /> <strong>10</strong> MATIC Each</p>
+                        <p class="mb-5">No Referral Necessary</p>
                         <p class="mb-5 pool1paying" style="display: none;">Current Paying Sequence number: <strong id="pool1paying"></strong></p>
                         <p class="mb-5 pool1sequencue" style="display: none;">Your Position Number : <strong id="pool1sequencue"></strong> </p>
                         <button type="button" class="btn btn-primary pool1pay">Enter</button>
@@ -1704,8 +1704,8 @@ var x = setInterval(function() {
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5"><span class="badge  badge-success">50 MATIC</span></h1>
-                        <p class="mb-5">Globally <strong></strong> people pays  <br /><strong>50</strong> MATIC each</p>
-                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5">Globally <strong></strong> People Pay  <br /><strong>50</strong> MATIC Each</p>
+                        <p class="mb-5">No Referral Necessary</p>
                       <p class="mb-5 pool2sequencue" style="display: none;">Your position number : <strong id="pool2sequencue"></strong> </p>
                       <p class="mb-5 pool2paying" style="display: none;">Current Paying Sequence number: <strong id="pool2paying"></strong></p>
                         <button type="button" class="btn btn-danger pool2pay">Enter</button>
@@ -1724,8 +1724,8 @@ var x = setInterval(function() {
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5"><span class="badge  badge-success">100 MATIC</span></h1>
-                        <p class="mb-5">Globally <strong></strong> people pays  <br /><strong>100</strong> MATIC each</p>
-                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5">Globally <strong></strong> People Pay  <br /><strong>100</strong> MATIC Each</p>
+                        <p class="mb-5">No Referral Necessary</p>
                       <p class="mb-5 pool3sequencue" style="display: none;">Your position number : <strong id="pool3sequencue"></strong> </p>
                       <p class="mb-5 pool3paying" style="display: none;">Current Paying Sequence number: <strong id="pool3paying"></strong></p>
                         <button type="button" class="btn btn-success pool3pay">Enter</button>
@@ -1745,8 +1745,8 @@ var x = setInterval(function() {
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5"><span class="badge  badge-success">500 MATIC</span></h1>
-                        <p class="mb-5">Globally <strong></strong> people pays  <br /><strong>500</strong> MATIC each</p>
-                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5">Globally <strong></strong> People Pay  <br /><strong>500</strong> MATIC Each</p>
+                        <p class="mb-5">No Referral Necessary</p>
                       <p class="mb-5 pool4sequencue" style="display: none;">Your position number : <strong id="pool4sequencue"></strong> </p>
                       <p class="mb-5 pool4paying" style="display: none;">Current Paying Sequence number: <strong id="pool4paying"></strong></p>
                         <button type="button" class="btn btn-success pool4pay">Enter</button>
@@ -1766,8 +1766,8 @@ var x = setInterval(function() {
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5"><span class="badge  badge-success">1000 MATIC</span></h1>
-                        <p class="mb-5">Globally <strong></strong> people pays  <br /><strong>1000</strong> MATIC each</p>
-                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5">Globally <strong></strong> People Pay  <br /><strong>1000</strong> MATIC Each</p>
+                        <p class="mb-5">No Referral Necessary</p>
                       <p class="mb-5 pool5sequencue" style="display: none;">Your position number : <strong id="pool5sequencue"></strong> </p>
                       <p class="mb-5 pool5paying" style="display: none;">Current Paying Sequence number: <strong id="pool5paying"></strong></p>
                         <button type="button" class="btn btn-success pool5pay">Enter</button>
@@ -1787,8 +1787,8 @@ var x = setInterval(function() {
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5"><span class="badge  badge-success">5000 MATIC</span></h1>
-                        <p class="mb-5">Globally <strong></strong> people pays  <br /><strong>5000</strong> MATIC each</p>
-                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5">Globally <strong></strong> People Pay  <br /><strong>5000</strong> MATIC Each</p>
+                        <p class="mb-5">No Referral Necessary</p>
                       <p class="mb-5 pool6sequencue" style="display: none;">Your position number : <strong id="pool6sequencue"></strong> </p>
                       <p class="mb-5 pool6paying" style="display: none;">Current Paying Sequence number: <strong id="pool6paying"></strong></p>
                         <button type="button" class="btn btn-success pool6pay">Enter</button>
@@ -1808,8 +1808,8 @@ var x = setInterval(function() {
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5"><span class="badge  badge-success">10000 MATIC</span></h1>
-                        <p class="mb-5">Globally <strong></strong> people pays  <br /><strong>10000</strong> MATIC each</p>
-                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5">Globally <strong></strong> People Pay  <br /><strong>10000</strong> MATIC Each</p>
+                        <p class="mb-5">No Referral Necessary</p>
                       <p class="mb-5 pool7sequencue" style="display: none;">Your position number : <strong id="pool7sequencue"></strong> </p>
                       <p class="mb-5 pool7paying" style="display: none;">Current Paying Sequence number: <strong id="pool7paying"></strong></p>
                         <button type="button" class="btn btn-success pool7pay">Enter</button>
@@ -1829,8 +1829,8 @@ var x = setInterval(function() {
                     </div>
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5"><span class="badge  badge-success">50000 MATIC</span></h1>
-                        <p class="mb-5">Globally <strong></strong> people pays  <br /><strong>50000</strong> MATIC each</p>
-                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5">Globally <strong></strong> People Pay  <br /><strong>50000</strong> MATIC Each</p>
+                        <p class="mb-5">No Referral Necessary</p>
                       <p class="mb-5 pool8sequencue" style="display: none;">Your position number : <strong id="pool8sequencue"></strong> </p>
                       <p class="mb-5 pool8paying" style="display: none;">Current Paying Sequence number: <strong id="pool8paying"></strong></p>
                         <button type="button" class="btn btn-success pool8pay">Enter</button>
